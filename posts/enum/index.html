@@ -19,7 +19,7 @@
 
     <meta name="generator" content="Hugo 0.68.3" />
 
-    <title>404 Page not found &mdash; Mai</title>
+    <title>enum &mdash; Mai</title>
 
     <link rel="stylesheet" href="/css/basic.css" type="text/css" />
     <link rel="stylesheet" href="/css/onyx.css" type="text/css" />
@@ -38,13 +38,14 @@
 
     
     
-<meta property="og:title" content="404 Page not found" />
+<meta property="og:title" content="enum" />
 <meta property="og:description"
-      content="A Hugo theme built using the Hugo Alabaster theme as base." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://zhyd1997.github.io/404.html" />
+      content="有如下代码片段： const ALIGNMENTS = { MIDDLE: &amp;#39;middle&amp;#39;, TOP: &amp;#39;top&amp;#39;, }; ... class DualListBox extends React.Component { static propTypes = { alignActions: PropTypes.oneOf([ALIGNMENTS.MIDDLE, ALIGNMENT.TOP]), ... }; static defaultProps = { alignActions: ALIGNMENTS.MIDDLE, ... }; render() { return (); }; }; 类型 值 enum ALIGNMENTS { MIDDLE = &amp;#39;middle&amp;#39;, TOP = &amp;#39;top&amp;#39;, } " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhyd1997.github.io/posts/enum/" />
 
 
+    
     
 
 
@@ -56,12 +57,14 @@
 
 
 
+    
+
 
 
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
-<meta name="twitter:description" content="A Hugo theme built using the Hugo Alabaster theme as base."/>
+<meta name="twitter:title" content="enum"/>
+<meta name="twitter:description" content="有如下代码片段： const ALIGNMENTS = { MIDDLE: &amp;#39;middle&amp;#39;, TOP: &amp;#39;top&amp;#39;, }; ... class DualListBox extends React.Component { static propTypes = { alignActions: PropTypes.oneOf([ALIGNMENTS.MIDDLE, ALIGNMENT.TOP]), ... }; static defaultProps = { alignActions: ALIGNMENTS.MIDDLE, ... }; render() { return (); }; }; 类型 值 enum ALIGNMENTS { MIDDLE = &amp;#39;middle&amp;#39;, TOP = &amp;#39;top&amp;#39;, } "/>
 
 </head>
 
@@ -71,6 +74,11 @@
 		<div class="bodywrapper">
 		    <div class="body">
                         
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents"></nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
                             
                             <script src="https://zhyd1997.github.io/js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 
@@ -114,9 +122,55 @@
                         
 
 			
-	<h1>Page not found</h1>
 
-	I'm sorry, but the requested page wasn’t found on the server.
+<h1>enum</h1>
+
+<div>
+    
+
+
+    
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
+    <p>有如下代码片段：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">ALIGNMENTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">MIDDLE</span><span class="o">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+    <span class="nx">TOP</span><span class="o">:</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="p">...</span>
+
+<span class="kr">class</span> <span class="nx">DualListBox</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+    <span class="kr">static</span> <span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">alignActions</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">oneOf</span><span class="p">([</span><span class="nx">ALIGNMENTS</span><span class="p">.</span><span class="nx">MIDDLE</span><span class="p">,</span> <span class="nx">ALIGNMENT</span><span class="p">.</span><span class="nx">TOP</span><span class="p">]),</span>
+      <span class="p">...</span>
+    <span class="p">};</span>
+
+    <span class="kr">static</span> <span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">alignActions</span><span class="o">:</span> <span class="nx">ALIGNMENTS</span><span class="p">.</span><span class="nx">MIDDLE</span><span class="p">,</span>
+      <span class="p">...</span>
+    <span class="p">};</span>
+
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">();</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div><p>类型 值</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">enum</span> <span class="nx">ALIGNMENTS</span> <span class="p">{</span>
+    <span class="nx">MIDDLE</span> <span class="o">=</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+    <span class="nx">TOP</span> <span class="o">=</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
+
 
 
 			
@@ -170,7 +224,7 @@
             </li>
         
             <li class="toctree-l1">
-                <a class="reference" href="/posts/enum/">enum</a>
+                <a class="reference active" href="/posts/enum/">enum</a>
             </li>
         
     </ul>

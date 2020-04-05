@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My Blog Homepage on Test</title>
+    <title>Posts on Mai</title>
     <link>https://zhyd1997.github.io/posts/</link>
-    <description>Recent content in My Blog Homepage on Test</description>
+    <description>Recent content in Posts on Mai</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://zhyd1997.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>One Bad Night</title>
-      <link>https://zhyd1997.github.io/posts/bad-night/</link>
+      <title>enum</title>
+      <link>https://zhyd1997.github.io/posts/enum/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://zhyd1997.github.io/posts/bad-night/</guid>
-      <description>Someone gave me herpes! Oh no!</description>
+      <guid>https://zhyd1997.github.io/posts/enum/</guid>
+      <description>有如下代码片段：
+const ALIGNMENTS = { MIDDLE: &amp;#39;middle&amp;#39;, TOP: &amp;#39;top&amp;#39;, }; ... class DualListBox extends React.Component { static propTypes = { alignActions: PropTypes.oneOf([ALIGNMENTS.MIDDLE, ALIGNMENT.TOP]), ... }; static defaultProps = { alignActions: ALIGNMENTS.MIDDLE, ... }; render() { return (); }; }; 类型 值
+enum ALIGNMENTS { MIDDLE = &amp;#39;middle&amp;#39;, TOP = &amp;#39;top&amp;#39;, } </description>
+    </item>
+    
+    <item>
+      <title>PropTypes 转换</title>
+      <link>https://zhyd1997.github.io/posts/proptypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhyd1997.github.io/posts/proptypes/</guid>
+      <description>PropTypes 是 React 对 prop 的一种类型检查机制，但从 v15.5 开始，官方已经 用 prop-types 库替代了 React.PropTypes ，在 TypeScript 项目中使用 JavaScript 库时需要下载声明文件 *.d.ts ，即下载对应的 @types/prop-types ， 用法如下
+   React + TypeScript     PropTypes.bool boolean   PropTypes.func () =&amp;gt; void   PropTypes.number number   PropTypes.object {}   PropTypes.string string   PropTypes.node React.ReactNode   PropTypes.any any    另外，强制类型检查方式也不一样，举个例子，前者用 isTrue: PropTypes.bool.isRequired 和 name: PropTypes.string ，后者 用 isTrue: boolean ， name?</description>
     </item>
     
   </channel>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    
+    
+    
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+
+    
+    <meta name="referrer" content="no-referrer">
+
+    
+        <meta name="description" content="A Hugo theme built using the Hugo Alabaster theme as base.">
+    
+
+    <meta name="generator" content="Hugo 0.68.3" />
+
+    <title>PropTypes 转换 &mdash; Mai</title>
+
+    <link rel="stylesheet" href="/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="/css/onyx.css" type="text/css" />
+
+    
+        <link rel="stylesheet" href="/css/github_chroma.css">
+    
+
+    
+
+    
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    
+
+    
+
+    
+    
+<meta property="og:title" content="PropTypes 转换" />
+<meta property="og:description"
+      content="PropTypes 是 React 对 prop 的一种类型检查机制，但从 v15.5 开始，官方已经 用 prop-types 库替代了 React.PropTypes ，在 TypeScript 项目中使用 JavaScript 库时需要下载声明文件 *.d.ts ，即下载对应的 @types/prop-types ， 用法如下 React &#43; TypeScript PropTypes.bool boolean PropTypes.func () =&amp;gt; void PropTypes.number number PropTypes.object {} PropTypes.string string PropTypes.node React.ReactNode PropTypes.any any 另外，强制类型检查方式也不一样，举个例子，前者用 isTrue: PropTypes.bool.isRequired 和 name: PropTypes.string ，后者 用 isTrue: boolean ， name?
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhyd1997.github.io/posts/proptypes/" />
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PropTypes 转换"/>
+<meta name="twitter:description" content="PropTypes 是 React 对 prop 的一种类型检查机制，但从 v15.5 开始，官方已经 用 prop-types 库替代了 React.PropTypes ，在 TypeScript 项目中使用 JavaScript 库时需要下载声明文件 *.d.ts ，即下载对应的 @types/prop-types ， 用法如下 React &#43; TypeScript PropTypes.bool boolean PropTypes.func () =&amp;gt; void PropTypes.number number PropTypes.object {} PropTypes.string string PropTypes.node React.ReactNode PropTypes.any any 另外，强制类型检查方式也不一样，举个例子，前者用 isTrue: PropTypes.bool.isRequired 和 name: PropTypes.string ，后者 用 isTrue: boolean ， name?
+"/>
+
+</head>
+
+    <body>
+	<div class="document">
+	    <div class="documentwrapper">
+		<div class="bodywrapper">
+		    <div class="body">
+                        
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents"></nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
+                            
+                            <script src="https://zhyd1997.github.io/js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+
+<script>
+ (function() {
+     var $toc = $('#TableOfContents');
+     if ($toc.length > 0) {
+         var $window = $(window);
+
+         function onScroll(){
+             var currentScroll = $window.scrollTop();
+             var h = $('.body h1, .body h2, .body h3, .body h4, .body h5, .body h6');
+             var id = "";
+             h.each(function (i, e) {
+                 e = $(e);
+                 if (e.offset().top - 10 <= currentScroll) {
+                     id = e.attr('id');
+                 }
+             });
+             var current = $toc.find('a.current');
+             if (current.length == 1 && current.eq(0).attr('href') == '#' + id) return true;
+
+             current.each(function (i, e) {
+                 $(e).removeClass('current').siblings('ul').hide();
+             });
+             $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                 $(e).children('a').addClass('current').siblings('ul').show();
+             });
+         }
+
+         $window.on('scroll', onScroll);
+         $(document).ready(function() {
+             $toc.find('a').parent('li').find('ul').hide();
+             onScroll();
+             document.getElementsByClassName('toc')[0].style.display = '';
+         });
+     }
+ })();
+</script>
+
+                        
+
+			
+
+<h1>PropTypes 转换</h1>
+
+<div>
+    
+
+
+    
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
+    <p>PropTypes 是 React 对 <code>prop</code> 的一种类型检查机制，但从 v15.5 开始，官方已经
+用 <code>prop-types</code> 库替代了 <code>React.PropTypes</code> ，在 TypeScript 项目中使用
+JavaScript 库时需要下载声明文件 <code>*.d.ts</code> ，即下载对应的 <code>@types/prop-types</code> ，
+用法如下</p>
+<table>
+<thead>
+<tr>
+<th>React</th>
+<th>+ TypeScript</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PropTypes.bool</code></td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td><code>PropTypes.func</code></td>
+<td><code>() =&gt; void</code></td>
+</tr>
+<tr>
+<td><code>PropTypes.number</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td><code>PropTypes.object</code></td>
+<td><code>{}</code></td>
+</tr>
+<tr>
+<td><code>PropTypes.string</code></td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td><code>PropTypes.node</code></td>
+<td><code>React.ReactNode</code></td>
+</tr>
+<tr>
+<td><code>PropTypes.any</code></td>
+<td><code>any</code></td>
+</tr>
+</tbody>
+</table>
+<p>另外，强制类型检查方式也不一样，举个例子，前者用
+<code>isTrue: PropTypes.bool.isRequired</code> 和 <code>name: PropTypes.string</code> ，后者
+用 <code>isTrue: boolean</code> ， <code>name?:stirng</code></p>
+<p>前面都是比较简单的，如果遇到复杂一点的呢，比如原项目中有如下 <code>shape</code> 定义：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">export</span> <span class="k">default</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">arrayOf</span><span class="p">(</span>
+    <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">oneOfType</span><span class="p">([</span>
+      <span class="nx">fooShape</span><span class="p">,</span>
+      <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">shape</span><span class="p">({</span>
+	  <span class="nx">a</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">any</span><span class="p">.</span><span class="nx">isRequired</span><span class="p">,</span>
+	  <span class="nx">b</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">arrayOf</span><span class="p">(</span><span class="nx">fooShape</span><span class="p">).</span><span class="nx">isRequired</span><span class="p">,</span>
+      <span class="p">}),</span>
+    <span class="p">]),</span>
+<span class="p">);</span>
+</code></pre></div><p>如何把它转化为 TypeScript 定义呢，我的解决方式结合 <code>interface</code> 和 <code>type</code> ：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">interface</span> <span class="nx">BarShape</span> <span class="p">{</span>
+    <span class="nx">a</span><span class="o">:</span> <span class="nx">any</span><span class="p">,</span>
+    <span class="nx">b</span><span class="o">:</span> <span class="nx">FooShape</span><span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">type</span> <span class="nx">X</span> <span class="o">=</span> <span class="nb">Array</span><span class="o">&lt;</span><span class="nx">FooShape</span> <span class="o">|</span> <span class="nx">BarShape</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div><p>以上内容有参考 stackoverflow，后来发现 <a href="https://github.com/microsoft/TypeScript/blob/master/doc/spec.md">TS spec</a> 都已经写得很清楚了。
+当然，也并不是所有的 JavaScript 库都需要单独下载 <code>.d.ts</code> 文件，比如该项目中用到的<a href="https://github.com/ai/nanoid/issues/204#issuecomment-606189297"><code>nanoid</code></a>，
+作者已经提前写好了
+有问题欢迎提 issues ！</p>
+
+
+</div>
+
+
+
+			
+			
+		    </div>
+		</div>
+	    </div>
+
+	    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+    <div class="sphinxsidebarwrapper">
+        <p class="logo">
+            <a href="https://zhyd1997.github.io/">
+                <img class="logo" src="/favicon.ico" alt="Logo"/>
+                
+                <br />
+                <span class="logo logo-name">react-dual-listbox</span>
+            </a>
+        </p>
+
+        <p class="blurb">A Hugo theme built using the Hugo Alabaster theme as base.</p>
+        
+
+        
+    
+
+    
+        <iframe src="https://ghbtns.com/github-btn.html?user=iSakurajimaMai&repo=react-dual-listbox&type=watch&count=true&size=large"
+                style="border: 0; overflow: hidden;" width="200" height="35"
+                sandbox="allow-scripts allow-popups"></iframe>
+        
+    
+
+    
+
+    
+
+
+        
+
+        
+
+    <h3>Main</h3>
+    <ul>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/about/">About me</a>
+            </li>
+        
+            <li class="toctree-l1">
+                <a class="reference active" href="/posts/proptypes/">PropTypes 转换</a>
+            </li>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/posts/enum/">enum</a>
+            </li>
+        
+    </ul>
+
+
+        
+
+    </div>
+</div>
+<div class="clearer"></div>
+
+	    <div class="footer">
+    
+        
+            This site is generated using
+        
+        <a href="https://gohugo.io/">Hugo 0.68.3</a>
+	&plus; <a href="https://github.com/kaushalmodi/hugo-onyx-theme">Onyx</a>
+    
+</div>
+
+
+    <a href="https://github.com/iSakurajimaMai/react-dual-listbox" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/forkme_right_darkblue_ribbon.png" alt="Fork me on GitHub" class="github"/>
+    </a>
+
+
+
+	    
+
+            
+
+	    
+	</div>
+    </body>
+</html>
