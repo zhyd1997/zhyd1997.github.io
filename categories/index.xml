@@ -9,23 +9,5 @@
 	<atom:link href="https://zhyd1997.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>reviews</title>
-      <link>https://zhyd1997.github.io/categories/reviews/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhyd1997.github.io/categories/reviews/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>updates</title>
-      <link>https://zhyd1997.github.io/categories/updates/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhyd1997.github.io/categories/updates/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
