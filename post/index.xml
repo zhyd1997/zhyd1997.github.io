@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PropTypes 转换 on Test</title>
+    <title>Posts on Test</title>
     <link>https://zhyd1997.github.io/post/</link>
-    <description>Recent content in PropTypes 转换 on Test</description>
+    <description>Recent content in Posts on Test</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://zhyd1997.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PropTypes 转换</title>
+      <link>https://zhyd1997.github.io/post/proptypes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhyd1997.github.io/post/proptypes/</guid>
+      <description>PropTypes 是 React 对 prop 的一种类型检查机制，但从 v15.5 开始，官方已经 用 prop-types 库替代了 React.PropTypes ，在 TypeScript 项目中使用 JavaScript 库时需要下载声明文件 *.d.ts ，即下载对应的 @types/prop-types ， 用法如下
+   React + TypeScript     PropTypes.bool boolean   PropTypes.func () =&amp;gt; void   PropTypes.number number   PropTypes.object {}   PropTypes.string string   PropTypes.node React.ReactNode   PropTypes.any any    另外，强制类型检查方式也不一样，举个例子，前者用 isTrue: PropTypes.bool.isRequired 和 name: PropTypes.string ，后者 用 isTrue: boolean ， name?</description>
+    </item>
     
   </channel>
 </rss>
