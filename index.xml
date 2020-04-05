@@ -29,15 +29,5 @@
    React + TypeScript     PropTypes.bool boolean   PropTypes.func () =&amp;gt; void   PropTypes.number number   PropTypes.object {}   PropTypes.string string   PropTypes.node React.ReactNode   PropTypes.any any    另外，强制类型检查方式也不一样，举个例子，前者用 isTrue: PropTypes.bool.isRequired 和 name: PropTypes.</description>
     </item>
     
-    <item>
-      <title>Posts</title>
-      <link>https://zhyd1997.github.io/posts/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhyd1997.github.io/posts/</guid>
-      <description>PropTypes 转换 PropTypes 是 React 对 prop 的一种类型检查机制，但从 v15.5 开始，官方已经 用 prop-types 库替代了 React.PropTypes ，在 TypeScript 项目中使用 JavaScript 库时需要下载声明文件 *.d.ts ，即下载对应的 @types/prop-types ， 用法如下
-   React + TypeScript     PropTypes.bool boolean   PropTypes.func () =&amp;gt; void   PropTypes.number number   PropTypes.object {}   PropTypes.string string   PropTypes.node React.ReactNode   PropTypes.any any    另外，强制类型检查方式也不一样，举个例子，前者用 isTrue: PropTypes.bool.isRequired 和 name: PropTypes.</description>
-    </item>
-    
   </channel>
 </rss>
