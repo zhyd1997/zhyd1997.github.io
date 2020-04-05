@@ -10,6 +10,17 @@
     
     
     <item>
+      <title>enum</title>
+      <link>https://zhyd1997.github.io/post/enum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhyd1997.github.io/post/enum/</guid>
+      <description>有如下代码片段：
+const ALIGNMENTS = { MIDDLE: &amp;#39;middle&amp;#39;, TOP: &amp;#39;top&amp;#39;, }; ... class DualListBox extends React.Component { static propTypes = { alignActions: PropTypes.oneOf([ALIGNMENTS.MIDDLE, ALIGNMENT.TOP]), ... }; static defaultProps = { alignActions: ALIGNMENTS.MIDDLE, ... }; render() { return (); }; }; 类型 值
+enum ALIGNMENTS { MIDDLE = &amp;#39;middle&amp;#39;, TOP = &amp;#39;top&amp;#39;, } </description>
+    </item>
+    
+    <item>
       <title>PropTypes 转换</title>
       <link>https://zhyd1997.github.io/post/proptypes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

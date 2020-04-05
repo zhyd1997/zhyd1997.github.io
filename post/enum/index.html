@@ -19,7 +19,7 @@
 
     <meta name="generator" content="Hugo 0.68.3" />
 
-    <title> Test</title>
+    <title>enum &mdash; Test</title>
 
     <link rel="stylesheet" href="/css/basic.css" type="text/css" />
     <link rel="stylesheet" href="/css/onyx.css" type="text/css" />
@@ -38,13 +38,14 @@
 
     
     
-<meta property="og:title" content="Write a blog about diff Algorithm" />
+<meta property="og:title" content="enum" />
 <meta property="og:description"
-      content="A Hugo theme built using the Hugo Alabaster theme as base." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://zhyd1997.github.io/" />
+      content="有如下代码片段： const ALIGNMENTS = { MIDDLE: &amp;#39;middle&amp;#39;, TOP: &amp;#39;top&amp;#39;, }; ... class DualListBox extends React.Component { static propTypes = { alignActions: PropTypes.oneOf([ALIGNMENTS.MIDDLE, ALIGNMENT.TOP]), ... }; static defaultProps = { alignActions: ALIGNMENTS.MIDDLE, ... }; render() { return (); }; }; 类型 值 enum ALIGNMENTS { MIDDLE = &amp;#39;middle&amp;#39;, TOP = &amp;#39;top&amp;#39;, } " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhyd1997.github.io/post/enum/" />
 
 
+    
     
 
 
@@ -56,12 +57,14 @@
 
 
 
+    
+
 
 
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Write a blog about diff Algorithm"/>
-<meta name="twitter:description" content="A Hugo theme built using the Hugo Alabaster theme as base."/>
+<meta name="twitter:title" content="enum"/>
+<meta name="twitter:description" content="有如下代码片段： const ALIGNMENTS = { MIDDLE: &amp;#39;middle&amp;#39;, TOP: &amp;#39;top&amp;#39;, }; ... class DualListBox extends React.Component { static propTypes = { alignActions: PropTypes.oneOf([ALIGNMENTS.MIDDLE, ALIGNMENT.TOP]), ... }; static defaultProps = { alignActions: ALIGNMENTS.MIDDLE, ... }; render() { return (); }; }; 类型 值 enum ALIGNMENTS { MIDDLE = &amp;#39;middle&amp;#39;, TOP = &amp;#39;top&amp;#39;, } "/>
 
 </head>
 
@@ -120,16 +123,57 @@
 
 			
 
+<h1>enum</h1>
 
-    <h1>Write a blog about diff Algorithm</h1>
-    <p>TypeScript 是 JavaScript 的超集，在前端项目中比较受欢迎，所以笔者用该语言
-重构了 <a href="https://github.com/jakezatecky/react-dual-listbox">react-dual-listbox</a> ，demo，在迁移过程中遇到的问题及解决方法记录一下。</p>
-
-
+<div>
+    
 
 
+    
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
+    <p>有如下代码片段：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">ALIGNMENTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">MIDDLE</span><span class="o">:</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+    <span class="nx">TOP</span><span class="o">:</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="p">...</span>
+
+<span class="kr">class</span> <span class="nx">DualListBox</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+    <span class="kr">static</span> <span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">alignActions</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">oneOf</span><span class="p">([</span><span class="nx">ALIGNMENTS</span><span class="p">.</span><span class="nx">MIDDLE</span><span class="p">,</span> <span class="nx">ALIGNMENT</span><span class="p">.</span><span class="nx">TOP</span><span class="p">]),</span>
+      <span class="p">...</span>
+    <span class="p">};</span>
+
+    <span class="kr">static</span> <span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">alignActions</span><span class="o">:</span> <span class="nx">ALIGNMENTS</span><span class="p">.</span><span class="nx">MIDDLE</span><span class="p">,</span>
+      <span class="p">...</span>
+    <span class="p">};</span>
+
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">();</span>
+    <span class="p">};</span>
+<span class="p">};</span>
+</code></pre></div><p>类型 值</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">enum</span> <span class="nx">ALIGNMENTS</span> <span class="p">{</span>
+    <span class="nx">MIDDLE</span> <span class="o">=</span> <span class="s1">&#39;middle&#39;</span><span class="p">,</span>
+    <span class="nx">TOP</span> <span class="o">=</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</div>
 
 
+
+			
 			
 		    </div>
 		</div>
@@ -180,7 +224,7 @@
             </li>
         
             <li class="toctree-l1">
-                <a class="reference" href="/post/enum/">enum</a>
+                <a class="reference active" href="/post/enum/">enum</a>
             </li>
         
     </ul>
