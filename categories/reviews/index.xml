@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reviews on Hugo Onyx Theme</title>
+    <link>https://example.com/categories/reviews/</link>
+    <description>Recent content in reviews on Hugo Onyx Theme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://example.com/categories/reviews/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gortons</title>
+      <link>https://example.com/fishsticks/gortons/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/fishsticks/gortons/</guid>
+      <description>I think these gave me the herpes.</description>
+    </item>
+    
+    <item>
+      <title>Van De Camps</title>
+      <link>https://example.com/fishsticks/van-de-camps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/fishsticks/van-de-camps/</guid>
+      <description>If this is fish, I&amp;rsquo;ll be a monkey&amp;rsquo;s uncle.</description>
+    </item>
+    
+  </channel>
+</rss>

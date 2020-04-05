@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://example.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/fear/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/fishsticks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/fishsticks/gortons/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/herpes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/posts/bad-night/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/reviews/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/categories/updates/</loc>
+  </url>
+  
+  <url>
+    <loc>https://example.com/fishsticks/van-de-camps/</loc>
+  </url>
+  
+</urlset>
