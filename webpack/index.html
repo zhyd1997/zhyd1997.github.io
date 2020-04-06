@@ -19,7 +19,7 @@
 
     <meta name="generator" content="Hugo 0.68.3" />
 
-    <title>About me &mdash; Mai</title>
+    <title>Webpack &mdash; Mai</title>
 
     <link rel="stylesheet" href="/css/basic.css" type="text/css" />
     <link rel="stylesheet" href="/css/onyx.css" type="text/css" />
@@ -38,12 +38,12 @@
 
     
     
-<meta property="og:title" content="About me" />
+<meta property="og:title" content="Webpack" />
 <meta property="og:description"
-      content="比较 geek，文档只看官方的，比如 MDN，javascript.info，绝大多数开发问题都可以 通过官方文档解决，github issue，stackoverflow 也是经常解决问题的工具 注重语言的实际功用，比如 web 语义化，而不是滥用标签。
+      content="在使用 webpack build 项目时，提示文件大小超过限制，而且项目上线后加载特别特别慢， stackoverflow 了一下，原来 webpack.config.js 加了 devtool: source-map ， 虽然有利于 development 时 debug，但是会影响网站性能，所以 build 时不需要 devtool ，尝试之后， bundle.js 大小缩至 1/6， 至于怎么解决，是 webpack.config.js 拆分成 webpack.dev.js 和 webpack.prod.js ，还是用三元运算符 devtool: (mode === &#39;development&#39;) ? &#39;inline-source-map&#39; : false 有待斟酌。
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://zhyd1997.github.io/about/" />
+<meta property="og:url" content="https://zhyd1997.github.io/webpack/" />
 
 
     
@@ -64,8 +64,8 @@
 
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="About me"/>
-<meta name="twitter:description" content="比较 geek，文档只看官方的，比如 MDN，javascript.info，绝大多数开发问题都可以 通过官方文档解决，github issue，stackoverflow 也是经常解决问题的工具 注重语言的实际功用，比如 web 语义化，而不是滥用标签。
+<meta name="twitter:title" content="Webpack"/>
+<meta name="twitter:description" content="在使用 webpack build 项目时，提示文件大小超过限制，而且项目上线后加载特别特别慢， stackoverflow 了一下，原来 webpack.config.js 加了 devtool: source-map ， 虽然有利于 development 时 debug，但是会影响网站性能，所以 build 时不需要 devtool ，尝试之后， bundle.js 大小缩至 1/6， 至于怎么解决，是 webpack.config.js 拆分成 webpack.dev.js 和 webpack.prod.js ，还是用三元运算符 devtool: (mode === &#39;development&#39;) ? &#39;inline-source-map&#39; : false 有待斟酌。
 "/>
 
 </head>
@@ -125,7 +125,7 @@
 
 			
 
-<h1>About me</h1>
+<h1>Webpack</h1>
 
 <div>
     
@@ -141,9 +141,14 @@
 <div class="post">
     
 
-    <p>比较 geek，文档只看官方的，比如 MDN，javascript.info，绝大多数开发问题都可以
-通过官方文档解决，github issue，stackoverflow 也是经常解决问题的工具</p>
-<p>注重语言的实际功用，比如 web 语义化，而不是滥用标签。</p>
+    <p>在使用 webpack <code>build</code> 项目时，提示文件大小超过限制，而且项目上线后加载特别特别慢，
+stackoverflow 了一下，原来 <code>webpack.config.js</code> 加了 <code>devtool: source-map</code> ，
+虽然有利于 <code>development</code> 时 debug，但是会影响网站性能，所以 <code>build</code> 时不需要
+<code>devtool</code> ，尝试之后，
+<code>bundle.js</code> 大小缩至 1/6， 至于怎么解决，是 <code>webpack.config.js</code> 拆分成 <code>webpack.dev.js</code> 和
+<code>webpack.prod.js</code> ，还是用三元运算符
+<code>devtool: (mode === 'development') ? 'inline-source-map' : false</code>
+有待斟酌。</p>
 
 
 </div>
@@ -193,7 +198,7 @@
     <ul>
         
             <li class="toctree-l1">
-                <a class="reference" href="/webpack/">Webpack</a>
+                <a class="reference active" href="/webpack/">Webpack</a>
             </li>
         
     </ul>
@@ -202,7 +207,7 @@
     <ul>
         
             <li class="toctree-l1">
-                <a class="reference active" href="/about/">About me</a>
+                <a class="reference" href="/about/">About me</a>
             </li>
         
             <li class="toctree-l1">
@@ -224,9 +229,6 @@
             Exported
             
             using
-            
-                <a href="https://www.gnu.org/software/emacs/">Emacs 26.3 </a> &plus;
-                <a href="https://orgmode.org/">Org mode 9.3.6 </a> &plus;
             
             <a href="https://github.com/kaushalmodi/ox-hugo"><code>ox-hugo</code></a>
             and published using

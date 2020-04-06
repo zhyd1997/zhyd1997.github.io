@@ -29,5 +29,14 @@
    React + TypeScript     PropTypes.bool boolean   PropTypes.func () =&amp;gt; void   PropTypes.number number   PropTypes.object {}   PropTypes.string string   PropTypes.node React.ReactNode   PropTypes.any any    另外，强制类型检查方式也不一样，举个例子，前者用 isTrue: PropTypes.bool.isRequired 和 name: PropTypes.</description>
     </item>
     
+    <item>
+      <title>Webpack</title>
+      <link>https://zhyd1997.github.io/webpack/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhyd1997.github.io/webpack/</guid>
+      <description>在使用 webpack build 项目时，提示文件大小超过限制，而且项目上线后加载特别特别慢， stackoverflow 了一下，原来 webpack.config.js 加了 devtool: source-map ， 虽然有利于 development 时 debug，但是会影响网站性能，所以 build 时不需要 devtool ，尝试之后， bundle.js 大小缩至 1/6， 至于怎么解决，是 webpack.config.js 拆分成 webpack.dev.js 和 webpack.prod.js ，还是用三元运算符 devtool: (mode === &#39;development&#39;) ? &#39;inline-source-map&#39; : false 有待斟酌。</description>
+    </item>
+    
   </channel>
 </rss>
