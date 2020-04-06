@@ -267,7 +267,8 @@ JavaScript 库时需要下载声明文件 <code>*.d.ts</code> ，即下载对应
 </code></pre></td></tr></table>
 </div>
 </div>
-<p>这里 ALIGNMENTS 既可以用做类型检查又可以赋值给变量，但是在 TS 中 const 的方法</p>
+<p>这里 ALIGNMENTS 既可以用做类型检查又可以赋值给变量，但是在 TS 中 <code>const</code> 的方法，
+只能起一种作用，所以我采用了 <code>enum</code> 解决上述问题：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -283,18 +284,6 @@ JavaScript 库时需要下载声明文件 <code>*.d.ts</code> ，即下载对应
 </code></pre></td></tr></table>
 </div>
 </div>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-emacs-lisp" data-lang="emacs-lisp"><span class="p">(</span><span class="nb">save-excursion</span>
-  <span class="p">(</span><span class="nf">goto-char</span> <span class="p">(</span><span class="nf">point-min</span><span class="p">))</span></code></pre></td></tr></table>
-</div>
-</div>
-<p>In line 1 we remember the current position. Line 2
-jumps to point-min.</p>
 <h2 id="fontawesome">FontAwesome&nbsp;<a class="headline-hash" href="#fontawesome">#</a> </h2>
 <p>原生</p>
 <h2 id="cdn">CDN&nbsp;<a class="headline-hash" href="#cdn">#</a> </h2>
