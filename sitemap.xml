@@ -3,27 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zhyd1997.github.io/about/</loc>
+    <loc>https://zhangyadong.me/about/</loc>
   </url>
   
   <url>
-    <loc>https://zhyd1997.github.io/categories/</loc>
+    <loc>https://zhangyadong.me/categories/</loc>
   </url>
   
   <url>
-    <loc>https://zhyd1997.github.io/code_review/</loc>
+    <loc>https://zhangyadong.me/code_review/</loc>
   </url>
   
   <url>
-    <loc>https://zhyd1997.github.io/</loc>
+    <loc>https://zhangyadong.me/</loc>
   </url>
   
   <url>
-    <loc>https://zhyd1997.github.io/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://zhyd1997.github.io/webpack/</loc>
+    <loc>https://zhangyadong.me/tags/</loc>
   </url>
   
 </urlset>

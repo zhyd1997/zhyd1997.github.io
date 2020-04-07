@@ -2,40 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homepage on Mai</title>
-    <link>https://zhyd1997.github.io/</link>
+    <link>https://zhangyadong.me/</link>
     <description>Recent content in Homepage on Mai</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="https://zhyd1997.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zhangyadong.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About me</title>
-      <link>https://zhyd1997.github.io/about/</link>
+      <link>https://zhangyadong.me/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://zhyd1997.github.io/about/</guid>
+      <guid>https://zhangyadong.me/about/</guid>
       <description>比较 geek，文档只看官方的，比如 MDN，javascript.info，绝大多数开发问题都可以 通过官方文档解决，github issue，stackoverflow 也是经常解决问题的工具
 注重语言的实际功用，比如 web 语义化，而不是滥用标签。</description>
     </item>
     
     <item>
       <title>Code Review</title>
-      <link>https://zhyd1997.github.io/code_review/</link>
+      <link>https://zhangyadong.me/code_review/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://zhyd1997.github.io/code_review/</guid>
+      <guid>https://zhangyadong.me/code_review/</guid>
       <description>PropTypes 转换 PropTypes 是 React 对 prop 的一种类型检查机制，但从 v15.5 开始，官方已经 用 prop-types 库替代了 React.PropTypes ，在 TypeScript 项目中使用 JavaScript 库时需要下载声明文件 *.d.ts ，即下载对应的 @types/prop-types ， 用法如下
    React + TypeScript     PropTypes.bool boolean   PropTypes.func () =&amp;gt; void   PropTypes.number number   PropTypes.object {}   PropTypes.string string   PropTypes.node React.ReactNode   PropTypes.any any    另外，强制类型检查方式也不一样，举个例子，前者用 isTrue: PropTypes.bool.isRequired 和 name: PropTypes.</description>
-    </item>
-    
-    <item>
-      <title>Webpack</title>
-      <link>https://zhyd1997.github.io/webpack/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhyd1997.github.io/webpack/</guid>
-      <description>在使用 webpack build 项目时，提示文件大小超过限制，而且项目上线后加载特别特别慢， stackoverflow 了一下，原来 webpack.config.js 加了 devtool: source-map ， 虽然有利于 development 时 debug，但是会影响网站性能，所以 build 时不需要 devtool ，尝试之后， bundle.js 大小缩至 1/6， 至于怎么解决，是 webpack.config.js 拆分成 webpack.dev.js 和 webpack.prod.js ，还是用三元运算符 devtool: (mode === &#39;development&#39;) ? &#39;inline-source-map&#39; : false 有待斟酌。</description>
     </item>
     
   </channel>
