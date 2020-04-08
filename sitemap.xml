@@ -7,6 +7,10 @@
   </url>
   
   <url>
+    <loc>https://zhangyadong.me/carousel/</loc>
+  </url>
+  
+  <url>
     <loc>https://zhangyadong.me/categories/</loc>
   </url>
   
@@ -20,6 +24,10 @@
   
   <url>
     <loc>https://zhangyadong.me/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyadong.me/webpack/</loc>
   </url>
   
 </urlset>

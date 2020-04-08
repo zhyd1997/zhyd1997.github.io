@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    
+    
+    
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+
+    
+    <meta name="referrer" content="no-referrer">
+
+    
+        <meta name="description" content="Demo: click [Here](https://isakurajimamai.github.io/react-dual-listbox/)">
+    
+
+    <meta name="generator" content="Hugo 0.68.3" />
+
+    <title>Carousel &mdash; Mai</title>
+
+    <link rel="stylesheet" href="/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="/css/onyx.css" type="text/css" />
+
+    
+        <link rel="stylesheet" href="/css/github_chroma.css">
+    
+
+    
+
+    
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    
+
+    
+
+    
+    
+<meta property="og:title" content="Carousel" />
+<meta property="og:description"
+      content="大佬太强了，教我撸了个轮播图 CSS 基本布局的学习和练习 JavaScript 语法和逻辑的学习和练习 学会封装组件 这只是 CSS 部分 整体思路 使用 绝对定位 方法使 4 个 div 元素叠在一起 div 部分 // parent element .carousel-wrapper { position: relative; // 设置宽高 width: 300px; height: 150px; } // children element .carousel-item { position: absolute; display: none; // 和 parent 宽高保持一致 width: 100%; height: 100%; } // 显示当前 div .carousel-wrapper .carousel-item_current { display: block; } indicator 部分 让 indicator 靠近底部，显示在 div 上面 .
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhangyadong.me/carousel/" />
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Carousel"/>
+<meta name="twitter:description" content="大佬太强了，教我撸了个轮播图 CSS 基本布局的学习和练习 JavaScript 语法和逻辑的学习和练习 学会封装组件 这只是 CSS 部分 整体思路 使用 绝对定位 方法使 4 个 div 元素叠在一起 div 部分 // parent element .carousel-wrapper { position: relative; // 设置宽高 width: 300px; height: 150px; } // children element .carousel-item { position: absolute; display: none; // 和 parent 宽高保持一致 width: 100%; height: 100%; } // 显示当前 div .carousel-wrapper .carousel-item_current { display: block; } indicator 部分 让 indicator 靠近底部，显示在 div 上面 .
+"/>
+
+</head>
+
+    <body>
+	<div class="document">
+	    <div class="documentwrapper">
+		<div class="bodywrapper">
+		    <div class="body">
+                        
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#大佬太强了-教我撸了个轮播图">大佬太强了，教我撸了个轮播图</a></li>
+    <li><a href="#这只是-css-部分">这只是 CSS 部分</a>
+      <ul>
+        <li><a href="#整体思路">整体思路</a></li>
+        <li><a href="#代码规范">代码规范</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
+                            
+                            <script src="https://zhangyadong.me/js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+
+<script>
+ (function() {
+     var $toc = $('#TableOfContents');
+     if ($toc.length > 0) {
+         var $window = $(window);
+
+         function onScroll(){
+             var currentScroll = $window.scrollTop();
+             var h = $('.body h1, .body h2, .body h3, .body h4, .body h5, .body h6');
+             var id = "";
+             h.each(function (i, e) {
+                 e = $(e);
+                 if (e.offset().top - 10 <= currentScroll) {
+                     id = e.attr('id');
+                 }
+             });
+             var current = $toc.find('a.current');
+             if (current.length == 1 && current.eq(0).attr('href') == '#' + id) return true;
+
+             current.each(function (i, e) {
+                 $(e).removeClass('current').siblings('ul').hide();
+             });
+             $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                 $(e).children('a').addClass('current').siblings('ul').show();
+             });
+         }
+
+         $window.on('scroll', onScroll);
+         $(document).ready(function() {
+             $toc.find('a').parent('li').find('ul').hide();
+             onScroll();
+             document.getElementsByClassName('toc')[0].style.display = '';
+         });
+     }
+ })();
+</script>
+
+                        
+
+			
+
+<h1>Carousel</h1>
+
+<div>
+    
+
+
+    
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
+    <h2 id="大佬太强了-教我撸了个轮播图">大佬太强了，教我撸了个轮播图&nbsp;<a class="headline-hash" href="#大佬太强了-教我撸了个轮播图">#</a> </h2>
+<ol>
+<li>CSS 基本布局的学习和练习</li>
+<li>JavaScript 语法和逻辑的学习和练习</li>
+<li>学会封装组件</li>
+</ol>
+<h2 id="这只是-css-部分">这只是 CSS 部分&nbsp;<a class="headline-hash" href="#这只是-css-部分">#</a> </h2>
+<h3 id="整体思路">整体思路&nbsp;<a class="headline-hash" href="#整体思路">#</a> </h3>
+<p>使用 <strong>绝对定位</strong> 方法使 4 个 <code>div</code> 元素叠在一起</p>
+<h4 id="div-部分"><code>div</code> 部分&nbsp;<a class="headline-hash" href="#div-部分">#</a> </h4>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="o">//</span> <span class="nt">parent</span> <span class="nt">element</span>
+<span class="p">.</span><span class="nc">carousel-wrapper</span> <span class="p">{</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+    <span class="err">//</span> <span class="err">设置宽高</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">//</span> <span class="nt">children</span> <span class="nt">element</span>
+<span class="p">.</span><span class="nc">carousel-item</span> <span class="p">{</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+    <span class="err">//</span> <span class="err">和</span> <span class="err">parent</span> <span class="err">宽高保持一致</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">//</span> <span class="nt">显示当前</span> <span class="nt">div</span>
+<span class="p">.</span><span class="nc">carousel-wrapper</span> <span class="p">.</span><span class="nc">carousel-item_current</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="indicator-部分">indicator 部分&nbsp;<a class="headline-hash" href="#indicator-部分">#</a> </h4>
+<ul>
+<li>让 indicator 靠近底部，显示在 <code>div</code> 上面</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-list</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">bottom</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="hl">    <span class="k">z-index</span><span class="p">:</span> <span class="mi">999</span><span class="p">;</span>
+</span><span class="p">}</span>
+
+<span class="p">.</span><span class="nc">indicator-item</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mf">2.5</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="o">-</span><span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">indicator-item_current</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+<ul>
+<li>水平居中，去掉 <code>whitespace</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-list</span> <span class="p">{</span>
+    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>增加间距</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-item</span> <span class="p">{</span>
+    <span class="k">margin-left</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">margin-right</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h4 id="arrow-部分">arrow 部分&nbsp;<a class="headline-hash" href="#arrow-部分">#</a> </h4>
+<p>使用行内元素 <code>span</code></p>
+<ul>
+<li>设置水平位置</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">arrow</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="o">-</span><span class="kc">block</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">arrow-left</span> <span class="p">{</span>
+    <span class="k">left</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">arrow-right</span> <span class="p">{</span>
+    <span class="k">right</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>垂直居中</li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">arrow</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="k">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="代码规范">代码规范&nbsp;<a class="headline-hash" href="#代码规范">#</a> </h3>
+<ol>
+<li><code>width</code> 在前， <code>height</code> 在后</li>
+<li><code>bem</code> 命名规范</li>
+</ol>
+
+
+</div>
+
+
+
+			
+			
+		    </div>
+		</div>
+	    </div>
+
+	    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+    <div class="sphinxsidebarwrapper">
+        <p class="logo">
+            <a href="https://zhangyadong.me/">
+                <img class="logo" src="/favicon-256x256.ico" alt="Logo"/>
+                
+                <br />
+                <span class="logo logo-name">react-dual-listbox</span>
+            </a>
+        </p>
+
+        <p class="blurb">Demo: click <a href="https://isakurajimamai.github.io/react-dual-listbox/">Here</a></p>
+        
+
+        
+    
+
+    
+        <iframe src="https://ghbtns.com/github-btn.html?user=iSakurajimaMai&repo=react-dual-listbox&type=watch&count=true&size=large"
+                style="border: 0; overflow: hidden;" width="200" height="35"
+                sandbox="allow-scripts allow-popups"></iframe>
+        
+    
+
+    
+
+    
+
+
+        
+
+        
+
+    <h3>Configuration</h3>
+    <ul>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/webpack/">Webpack</a>
+            </li>
+        
+    </ul>
+
+    <h3>Css</h3>
+    <ul>
+        
+            <li class="toctree-l1">
+                <a class="reference active" href="/carousel/">Carousel</a>
+            </li>
+        
+    </ul>
+
+    <h3>Main</h3>
+    <ul>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/about/">About me</a>
+            </li>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/code_review/">Code Review</a>
+            </li>
+        
+    </ul>
+
+
+        
+
+    </div>
+</div>
+<div class="clearer"></div>
+
+	    <div class="footer">
+    
+        
+            Exported
+            
+            using
+            
+            <a href="https://github.com/kaushalmodi/ox-hugo"><code>ox-hugo</code></a>
+            and published using
+        
+        <a href="https://gohugo.io/">Hugo 0.68.3</a>
+	&plus; <a href="https://github.com/kaushalmodi/hugo-onyx-theme">Onyx</a>
+    
+</div>
+
+
+    <a href="https://github.com/iSakurajimaMai/react-dual-listbox" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/forkme_right_darkblue_ribbon.png" alt="Fork me on GitHub" class="github"/>
+    </a>
+
+
+
+	    
+
+            
+
+	    
+	</div>
+    </body>
+</html>
