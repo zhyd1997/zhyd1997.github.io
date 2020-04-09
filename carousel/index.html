@@ -40,7 +40,7 @@
     
 <meta property="og:title" content="Carousel" />
 <meta property="og:description"
-      content="大佬太强了，教我撸了个轮播图 CSS 基本布局的学习和练习 JavaScript 语法和逻辑的学习和练习 学会封装组件 这只是 CSS 部分 整体思路 使用 绝对定位 方法使 4 个 div 元素叠在一起 div 部分 // parent element .carousel-wrapper { position: relative; // 设置宽高 width: 300px; height: 150px; } // children element .carousel-item { position: absolute; display: none; // 和 parent 宽高保持一致 width: 100%; height: 100%; } // 显示当前 div .carousel-wrapper .carousel-item_current { display: block; } indicator 部分 让 indicator 靠近底部，显示在 div 上面 .
+      content="大佬太强了，教我撸了个轮播图 初衷： CSS 基本布局的学习和练习 JavaScript 语法和逻辑的学习和练习 学会封装组件 项目地址：JSRUN ,gitee 整体思路 使用 绝对定位 方法使 4 个 div 元素叠在一起 这只是 CSS 部分 div 部分 // parent element .carousel-wrapper { position: relative; // 设置宽高 width: 300px; height: 150px; } // children element .carousel-item { position: absolute; display: none; // 和 parent 宽高保持一致 width: 100%; height: 100%; } // 显示当前 div .carousel-wrapper .carousel-item_current { display: block; } indicator 部分 让 indicator 靠近底部，显示在 div 上面 .
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://zhangyadong.me/carousel/" />
@@ -65,7 +65,7 @@
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Carousel"/>
-<meta name="twitter:description" content="大佬太强了，教我撸了个轮播图 CSS 基本布局的学习和练习 JavaScript 语法和逻辑的学习和练习 学会封装组件 这只是 CSS 部分 整体思路 使用 绝对定位 方法使 4 个 div 元素叠在一起 div 部分 // parent element .carousel-wrapper { position: relative; // 设置宽高 width: 300px; height: 150px; } // children element .carousel-item { position: absolute; display: none; // 和 parent 宽高保持一致 width: 100%; height: 100%; } // 显示当前 div .carousel-wrapper .carousel-item_current { display: block; } indicator 部分 让 indicator 靠近底部，显示在 div 上面 .
+<meta name="twitter:description" content="大佬太强了，教我撸了个轮播图 初衷： CSS 基本布局的学习和练习 JavaScript 语法和逻辑的学习和练习 学会封装组件 项目地址：JSRUN ,gitee 整体思路 使用 绝对定位 方法使 4 个 div 元素叠在一起 这只是 CSS 部分 div 部分 // parent element .carousel-wrapper { position: relative; // 设置宽高 width: 300px; height: 150px; } // children element .carousel-item { position: absolute; display: none; // 和 parent 宽高保持一致 width: 100%; height: 100%; } // 显示当前 div .carousel-wrapper .carousel-item_current { display: block; } indicator 部分 让 indicator 靠近底部，显示在 div 上面 .
 "/>
 
 </head>
@@ -80,13 +80,23 @@
                                 <div class="toc">
                                     <nav id="TableOfContents">
   <ul>
-    <li><a href="#大佬太强了-教我撸了个轮播图">大佬太强了，教我撸了个轮播图</a></li>
+    <li><a href="#大佬-太强了-教我撸了个轮播图"><a href="https://segmentfault.com/u/stillsilly">大佬</a>太强了，教我撸了个轮播图</a></li>
+    <li><a href="#整体思路">整体思路</a></li>
     <li><a href="#这只是-css-部分">这只是 CSS 部分</a>
       <ul>
-        <li><a href="#整体思路">整体思路</a></li>
-        <li><a href="#代码规范">代码规范</a></li>
+        <li><a href="#div-部分"><code>div</code> 部分</a></li>
+        <li><a href="#indicator-部分">indicator 部分</a></li>
+        <li><a href="#arrow-部分">arrow 部分</a></li>
       </ul>
     </li>
+    <li><a href="#右箭头的-onclick-事件绑定">右箭头的 <code>onclick</code> 事件绑定</a>
+      <ul>
+        <li><a href="#选择元素">选择元素</a></li>
+        <li><a href="#从-console-dot-log-开始">从 <code>console.log()</code> 开始</a></li>
+        <li><a href="#效果实现">效果实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#代码规范">代码规范</a></li>
   </ul>
 </nav>
                                     <a href="#" class="back-to-top">Back to top</a>
@@ -151,16 +161,18 @@
 <div class="post">
     
 
-    <h2 id="大佬太强了-教我撸了个轮播图">大佬太强了，教我撸了个轮播图&nbsp;<a class="headline-hash" href="#大佬太强了-教我撸了个轮播图">#</a> </h2>
+    <h2 id="大佬-太强了-教我撸了个轮播图"><a href="https://segmentfault.com/u/stillsilly">大佬</a>太强了，教我撸了个轮播图&nbsp;<a class="headline-hash" href="#大佬-太强了-教我撸了个轮播图">#</a> </h2>
+<p><strong>初衷：</strong></p>
 <ol>
 <li>CSS 基本布局的学习和练习</li>
 <li>JavaScript 语法和逻辑的学习和练习</li>
 <li>学会封装组件</li>
 </ol>
-<h2 id="这只是-css-部分">这只是 CSS 部分&nbsp;<a class="headline-hash" href="#这只是-css-部分">#</a> </h2>
-<h3 id="整体思路">整体思路&nbsp;<a class="headline-hash" href="#整体思路">#</a> </h3>
+<p>项目地址：<a href="http://jsrun.net/iHfKp/edit">JSRUN</a> ,<a href="https://gitee.com/write%5Fa%5Fcarousel/carousel">gitee</a></p>
+<h2 id="整体思路">整体思路&nbsp;<a class="headline-hash" href="#整体思路">#</a> </h2>
 <p>使用 <strong>绝对定位</strong> 方法使 4 个 <code>div</code> 元素叠在一起</p>
-<h4 id="div-部分"><code>div</code> 部分&nbsp;<a class="headline-hash" href="#div-部分">#</a> </h4>
+<h2 id="这只是-css-部分">这只是 CSS 部分&nbsp;<a class="headline-hash" href="#这只是-css-部分">#</a> </h2>
+<h3 id="div-部分"><code>div</code> 部分&nbsp;<a class="headline-hash" href="#div-部分">#</a> </h3>
 <div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="o">//</span> <span class="nt">parent</span> <span class="nt">element</span>
 <span class="p">.</span><span class="nc">carousel-wrapper</span> <span class="p">{</span>
     <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
@@ -180,7 +192,7 @@
 <span class="p">.</span><span class="nc">carousel-wrapper</span> <span class="p">.</span><span class="nc">carousel-item_current</span> <span class="p">{</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><h4 id="indicator-部分">indicator 部分&nbsp;<a class="headline-hash" href="#indicator-部分">#</a> </h4>
+</code></pre></div><h3 id="indicator-部分">indicator 部分&nbsp;<a class="headline-hash" href="#indicator-部分">#</a> </h3>
 <ul>
 <li>让 indicator 靠近底部，显示在 <code>div</code> 上面</li>
 </ul>
@@ -220,7 +232,7 @@
     <span class="k">margin-left</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
     <span class="k">margin-right</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><h4 id="arrow-部分">arrow 部分&nbsp;<a class="headline-hash" href="#arrow-部分">#</a> </h4>
+</code></pre></div><h3 id="arrow-部分">arrow 部分&nbsp;<a class="headline-hash" href="#arrow-部分">#</a> </h3>
 <p>使用行内元素 <code>span</code></p>
 <ul>
 <li>设置水平位置</li>
@@ -231,8 +243,8 @@
     <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
     <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="o">-</span><span class="kc">block</span><span class="p">;</span>
     <span class="k">font-size</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">width</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
-    <span class="k">height</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="p">.</span><span class="nc">arrow-left</span> <span class="p">{</span>
@@ -251,10 +263,66 @@
     <span class="k">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><h3 id="代码规范">代码规范&nbsp;<a class="headline-hash" href="#代码规范">#</a> </h3>
+</code></pre></div><ul>
+<li>形状改为圆形，设置 <code>opacity</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">arrow</span> <span class="p">{</span>
+    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li><code>hover</code> 改变 <code>opacity</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">arrow</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>添加 <code>cursor</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-item</span> <span class="p">{</span>
+    <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">arrow</span> <span class="p">{</span>
+    <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="右箭头的-onclick-事件绑定">右箭头的 <code>onclick</code> 事件绑定&nbsp;<a class="headline-hash" href="#右箭头的-onclick-事件绑定">#</a> </h2>
+<h3 id="选择元素">选择元素&nbsp;<a class="headline-hash" href="#选择元素">#</a> </h3>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">elArrowRight</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">&#39;arrow-right&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">elListCarouselItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">&#39;carousel-item&#39;</span><span class="p">);</span>
+</code></pre></div><p>事件绑定是发生在 <code>element</code> 身上的，
+<code>document.getElementsByClassName()</code> 返回值是类数组的对象 <code>HTMLCollection</code> ，
+类名为 <code>carousel-item_current</code> 的元素是当前要绑定的元素，对象后面跟 <code>[0]</code> 即可。</p>
+<h3 id="从-console-dot-log-开始">从 <code>console.log()</code> 开始&nbsp;<a class="headline-hash" href="#从-console-dot-log-开始">#</a> </h3>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 注意变量作用域
+</span><span class="c1"></span>
+<span class="nx">elArrowRight</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">handleClick</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">oldIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">currentIndex</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 点击最后一个 div 要切回第一个 div
+</span><span class="c1"></span>      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;现在是第 &#39;</span> <span class="o">+</span> <span class="nx">oldIndex</span> <span class="o">+</span> <span class="s1">&#39; 图显示，应该改成第 &#39;</span> <span class="o">+</span> <span class="nx">currentIndex</span> <span class="o">+</span> <span class="s1">&#39; 图显示&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="效果实现">效果实现&nbsp;<a class="headline-hash" href="#效果实现">#</a> </h3>
+<p><code>div</code> 的隐藏和显示已经用 <code>css</code> 实现了，逻辑实现 <code>console.log()</code> 描述的也很清楚，接下来
+接下来要做的就是具体效果，改变 <code>elListCarouselItem</code> 的 <code>carousel-item_current</code> 位置，即点击右
+箭头之后，该 <code>class</code> 在当前 <code>&lt;div&gt;</code> 中删除，添加至下一个 <code>&lt;div&gt;</code> 中，实现方法用
+<code>classList</code> 即可：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+<span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+</code></pre></div><p><strong>左箭头的实现方法同理，不再赘述。</strong></p>
+<h2 id="代码规范">代码规范&nbsp;<a class="headline-hash" href="#代码规范">#</a> </h2>
 <ol>
 <li><code>width</code> 在前， <code>height</code> 在后</li>
-<li><code>bem</code> 命名规范</li>
+<li>CSS <code>bem</code> 命名规范，eg: <code>.carousel-item_current</code> , <code>.indicator-item_current</code></li>
+<li>JavaScript 的 <code>camelCase</code> 命名法</li>
 </ol>
 
 
@@ -301,24 +369,6 @@
 
         
 
-    <h3>Configuration</h3>
-    <ul>
-        
-            <li class="toctree-l1">
-                <a class="reference" href="/webpack/">Webpack</a>
-            </li>
-        
-    </ul>
-
-    <h3>Css</h3>
-    <ul>
-        
-            <li class="toctree-l1">
-                <a class="reference active" href="/carousel/">Carousel</a>
-            </li>
-        
-    </ul>
-
     <h3>Main</h3>
     <ul>
         
@@ -328,6 +378,24 @@
         
             <li class="toctree-l1">
                 <a class="reference" href="/code_review/">Code Review</a>
+            </li>
+        
+    </ul>
+
+    <h3>Configuration</h3>
+    <ul>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/webpack/">Webpack</a>
+            </li>
+        
+    </ul>
+
+    <h3>Miscellaneous</h3>
+    <ul>
+        
+            <li class="toctree-l1">
+                <a class="reference active" href="/carousel/">Carousel</a>
             </li>
         
     </ul>
