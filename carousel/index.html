@@ -223,7 +223,7 @@
     <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
 <span class="p">}</span></code></pre></div>
 <ul>
-<li>水平居中，去掉 <code>whitespace</code></li>
+<li>水平居中，去掉换行符导致的间距</li>
 </ul>
 <!-- raw HTML omitted -->
 <div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-list</span> <span class="p">{</span>
@@ -270,7 +270,7 @@
     <span class="k">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><ul>
-<li>形状改为圆形，设置透明度</li>
+<li>形状改为圆形，设置不透明度</li>
 </ul>
 <!-- raw HTML omitted -->
 <div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">arrow</span> <span class="p">{</span>
@@ -278,7 +278,7 @@
     <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div><ul>
-<li>改变 <code>:hover</code> 透明度</li>
+<li>改变 <code>:hover</code> 不透明度</li>
 </ul>
 <!-- raw HTML omitted -->
 <div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">arrow</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
@@ -301,7 +301,7 @@
 <span class="kd">var</span> <span class="nx">elListCarouselItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">&#39;carousel-item&#39;</span><span class="p">);</span>
 </code></pre></div><p>事件绑定是发生在 <code>element</code> 身上的，
 <code>document.getElementsByClassName()</code> 返回值是类数组的对象 <code>HTMLCollection</code> ，
-类名为 <code>carousel-item_current</code> 的元素是当前要绑定的元素，对象后面跟 <code>[0]</code> 即可。</p>
+类名为 <code>arrow-right</code> 的元素是当前要绑定的元素，对象后面跟 <code>[0]</code> 即可。</p>
 <h3 id="从-console-dot-log-开始">从 <code>console.log()</code> 开始&nbsp;<a class="headline-hash" href="#从-console-dot-log-开始">#</a> </h3>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 注意变量作用域
 </span><span class="c1"></span>
