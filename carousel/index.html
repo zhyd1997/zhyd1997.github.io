@@ -99,6 +99,7 @@
         <li><a href="#选择元素">选择元素</a></li>
         <li><a href="#从-console-dot-log-开始">从 <code>console.log()</code> 开始</a></li>
         <li><a href="#效果实现">效果实现</a></li>
+        <li><a href="#优化">优化</a></li>
       </ul>
     </li>
     <li><a href="#代码规范">代码规范</a></li>
@@ -305,7 +306,7 @@
 <h3 id="从-console-dot-log-开始">从 <code>console.log()</code> 开始&nbsp;<a class="headline-hash" href="#从-console-dot-log-开始">#</a> </h3>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 注意变量作用域
 </span><span class="c1"></span>
-<span class="nx">elArrowRight</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">handleClick</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nx">elArrowRight</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">oldIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span><span class="p">;</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="nx">currentIndex</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 点击最后一个 div 要切回第一个 div
@@ -324,6 +325,8 @@
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
 <span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
 </code></pre></div><p><strong>左箭头的实现方法同理，不再赘述。</strong></p>
+<h3 id="优化">优化&nbsp;<a class="headline-hash" href="#优化">#</a> </h3>
+<p>前面获取 <code>oldIndex</code> 是通过存储 <code>currentIndex</code> 来实现的，</p>
 <h2 id="代码规范">代码规范&nbsp;<a class="headline-hash" href="#代码规范">#</a> </h2>
 <ol>
 <li><code>width</code> 在前， <code>height</code> 在后</li>
