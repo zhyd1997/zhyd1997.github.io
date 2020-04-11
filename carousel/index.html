@@ -113,6 +113,7 @@
         <li><a href="#箭头和指示器同步">箭头和指示器同步</a></li>
         <li><a href="#魔法数字问题">魔法数字问题</a></li>
         <li><a href="#消除重复代码-高优先级">消除重复代码（ <em>高优先级</em> ）</a></li>
+        <li><a href="#添加图片">添加图片</a></li>
       </ul>
     </li>
     <li><a href="#代码规范">代码规范</a></li>
@@ -569,7 +570,35 @@
     <span class="nx">changeCurrentClassName</span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div>
-<h2 id="代码规范">代码规范&nbsp;<a class="headline-hash" href="#代码规范">#</a> </h2>
+<p>最终代码如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elArrowRight</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">handleIndexChange</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">elArrowLeft</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">handleIndexChange</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">elIndicatorList</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">functin</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">target</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;indicator-item&#39;</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="nx">handleIndexChange</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div><h3 id="添加图片">添加图片&nbsp;<a class="headline-hash" href="#添加图片">#</a> </h3>
+<p>前面的操作都是基于不同背景色的 <code>&lt;div&gt;</code> ，现在可以将其替换为
+真实的图片，本地图片上传 Gitee 后会被转成 base64，一来加密，二来
+也是一种优化方式，但是无法引用，所以使用了图床外链，设置一下样式：</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">carousel-item-img</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="代码规范">代码规范&nbsp;<a class="headline-hash" href="#代码规范">#</a> </h2>
 <ol>
 <li><code>width</code> 在前， <code>height</code> 在后</li>
 <li>CSS <code>bem</code> 命名规范，eg: <code>.carousel-item_current</code> , <code>.indicator-item_current</code></li>
