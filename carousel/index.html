@@ -358,12 +358,13 @@
 <span class="kd">var</span> <span class="nx">elIndicatorItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;.indicator-item&#39;</span><span class="p">);</span>
 </code></pre></div><p>同样，先做逻辑，再实现功能</p>
 <h3 id="console-dot-log-对应-indicator-item-数字"><code>console.log()</code> 对应 <code>indicator-item</code> 数字&nbsp;<a class="headline-hash" href="#console-dot-log-对应-indicator-item-数字">#</a> </h3>
-<p>要获取对应数字，须在 <code>.html</code> 里加上 <code>dataset</code> 属性， 即：</p>
+<p>要获取对应数字，须在 <code>.html</code> 自定义 <code>data-*</code> 属性， 即：</p>
 <div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">data-index</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;indicator-item indicator-item_current&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">span</span> <span class="na">data-index</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;indicator-item&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">span</span> <span class="na">data-index</span><span class="o">=</span><span class="s">&#34;2&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;indicator-item&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">span</span> <span class="na">data-index</span><span class="o">=</span><span class="s">&#34;3&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;indicator-item&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-</code></pre></div><p>这里，我们需要的数字 <code>index</code> ，而不是字符串，需要将字符串转化为数字，
+</code></pre></div><p>然后在 <code>.js</code> 文件中通过 <code>dataset</code> 获取属性。
+这里，我们需要的数字 <code>index</code> ，而不是字符串，需要将字符串转化为数字，
 有 <code>parseInt()</code> 和 <code>Number()</code> 可供选择，<a href="https://stackoverflow.com/questions/4090518/what-is-the-difference-between-parseint-and-number">查了一下</a> ,选了 <code>parseInt()</code> ：</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elIndicatorList</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
@@ -387,8 +388,6 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>这里用了 <code>classList.contains()</code> 而不用 <code>className()</code> 的理由同
-<code>querySelector()</code></p>
 <h3 id="功能实现">功能实现&nbsp;<a class="headline-hash" href="#功能实现">#</a> </h3>
 <p>实现方式和左右箭头的一样，关键是怎么知道上个状态的 <code>index</code> ，当前 <code>index</code> 即
 <code>targetIndex</code> ，这里先用 <code>currentIndex</code> ，函数执行之后，将 <code>targetIndex</code> 赋给 <code>currentIndex</code>
@@ -593,8 +592,7 @@
 <span class="p">};</span>
 </code></pre></div><h3 id="添加图片">添加图片&nbsp;<a class="headline-hash" href="#添加图片">#</a> </h3>
 <p>前面的操作都是基于不同背景色的 <code>&lt;div&gt;</code> ，现在可以将其替换为
-真实的图片，本地图片上传 Gitee 后会被转成 base64，一来加密，二来
-也是一种优化方式，但是无法引用，所以使用了图床外链，设置一下样式：</p>
+真实的图片，使用了图床外链，设置一下样式：</p>
 <div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">carousel-item-img</span> <span class="p">{</span>
     <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
     <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
@@ -605,6 +603,8 @@
 <li><code>width</code> 在前， <code>height</code> 在后</li>
 <li>CSS <code>bem</code> 命名规范，eg: <code>.carousel-item_current</code> , <code>.indicator-item_current</code></li>
 <li>JavaScript 的 <code>camelCase</code> 命名法</li>
+<li>提炼函数，消除重复代码</li>
+<li>去除魔法数字</li>
 </ol>
 
 
