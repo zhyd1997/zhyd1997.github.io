@@ -114,7 +114,7 @@
         <li><a href="#魔法数字问题">魔法数字问题</a></li>
         <li><a href="#消除重复代码-高优先级">消除重复代码（ <em>高优先级</em> ）</a></li>
         <li><a href="#添加图片">添加图片</a></li>
-        <li><a href="#优化-indicator-item-效果"><span class="org-todo todo TODO">TODO</span> 优化 <code>indicator-item</code> 效果</a></li>
+        <li><a href="#优化-indicator-item-效果">优化 <code>indicator-item</code> 效果</a></li>
       </ul>
     </li>
     <li><a href="#代码规范">代码规范</a></li>
@@ -598,8 +598,26 @@
     <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
     <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div><h3 id="优化-indicator-item-效果"><span class="org-todo todo TODO">TODO</span> 优化 <code>indicator-item</code> 效果&nbsp;<a class="headline-hash" href="#优化-indicator-item-效果">#</a> </h3>
-<h2 id="代码规范">代码规范&nbsp;<a class="headline-hash" href="#代码规范">#</a> </h2>
+</code></pre></div><h3 id="优化-indicator-item-效果">优化 <code>indicator-item</code> 效果&nbsp;<a class="headline-hash" href="#优化-indicator-item-效果">#</a> </h3>
+<p><code>::after::</code> 是 <code>css3</code> 为区分伪类和伪元素的写法，不兼容 IE8</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-item</span><span class="p">::</span><span class="nd">after</span> <span class="p">{</span>
+    <span class="k">content</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+    <span class="k">top</span><span class="p">:</span> <span class="mi">-3</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">bottom</span><span class="p">:</span> <span class="mi">-3</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">right</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>给 <code>indicator-item</code> 添加 <code>transform</code> 效果，优化视觉体验：</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-item</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">scale</span><span class="p">(</span><span class="mf">1.3</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">indicator-item_current</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">scale</span><span class="p">(</span><span class="mf">1.3</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="代码规范">代码规范&nbsp;<a class="headline-hash" href="#代码规范">#</a> </h2>
 <ol>
 <li><code>width</code> 在前， <code>height</code> 在后</li>
 <li>CSS <code>bem</code> 命名规范，eg: <code>.carousel-item_current</code> , <code>.indicator-item_current</code></li>
@@ -679,6 +697,10 @@
         
             <li class="toctree-l1">
                 <a class="reference active" href="/carousel/">Carousel</a>
+            </li>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/interview/">Interview</a>
             </li>
         
     </ul>

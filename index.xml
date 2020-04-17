@@ -41,6 +41,18 @@
     </item>
     
     <item>
+      <title>Interview</title>
+      <link>https://zhangyadong.me/interview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhangyadong.me/interview/</guid>
+      <description>排序 完善以下代码，写一个平均时间复杂度低于 O(n^2) 的排序算法（空间 复杂度不作要求）：
+function sort(a) { for (let j = 1; j &amp;lt; a.length; j++) { let key = a[j]; let i = j - 1; while (i &amp;gt;= 0 &amp;amp;&amp;amp; a[i] &amp;gt; key) { a[i+1] = a[i]; i = i - 1; } a[i+1] = key; } return a; } 桶排序递归解法
+缓存 完善下面代码，输出第 n (n=0,1,2,3,&amp;hellip;) 个斐波那契数，要求 n 为 50 时，能够在 2秒内 返回结果
+function fibonacci(n) { let phi = (1 + Math.</description>
+    </item>
+    
+    <item>
       <title>Webpack</title>
       <link>https://zhangyadong.me/webpack/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
