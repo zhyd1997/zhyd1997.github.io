@@ -34,7 +34,7 @@
       <pubDate>Thu, 30 Jul 2020 16:43:00 +0800</pubDate>
       
       <guid>https://zhangyadong.me/post/tool/</guid>
-      <description>Overleaf rich-text mode AucTeX preview-latex It relys on Emacs.</description>
+      <description>    Overleaf rich-text mode AucTeX preview-latex     PROS     CONS not open source, bugs rely on Emacs    </description>
     </item>
     
     <item>
@@ -74,7 +74,7 @@
       
       <guid>https://zhangyadong.me/about/</guid>
       <description>比较 geek，文档只看官方的，比如 MDN，javascript.info，绝大多数开发问题都可以通过官方文档解决，github issue，stackoverflow 也是经常解决问题的工具
-P.S. 正在找工作。。。
+运气好
 TL;DR
 2017 年开始折腾博客，用 Hexo 搭的，基本什么都没写，后来换 Hugo，托管在 coding.net ，啥都没写，这个博客是今年 3 月份搭的，之前用 github.io 访问，经大佬指点，绑定了域名，之前用了两年的阿里云 .top 域名过期未续费，所以在 namecheap 注册了 .me 新域名，托管在 github page，而且其与 Let&amp;rsquo;s Encrypt 有合作，自动 https 绿锁， Everything goes smoothly .
 用 ox-hugo 写博客有一点不方便就是不支持 org-mode 的 codeRef ，希望作者早点完成这个 feature 吧！
