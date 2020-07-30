@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  <link rel="prev" href="https://zhangyadong.me/2020/carousel/" />
+  
+  <link rel="canonical" href="https://zhangyadong.me/2020/webpack/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Webpack | Mai
+       
+  </title>
+  <meta name="title" content="Webpack | Mai">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Webpack"/>
+<meta name="twitter:description" content="在使用 webpack build 项目时，提示文件大小超过限制，而且项目上线后加载特别特别慢， stackoverflow 了一下，原来 webpack.config.js 加了 devtool: source-map ，虽然有利于 development 时 debug，但是会影响网站性能，所以 build 时不需要 devtool ，尝试之后， bundle.js 大小缩至 1/6， 至于怎么解决，是 webpack.config.js 拆分成 webpack.dev.js 和 webpack.prod.js ，还是用三元运算符 devtool: (mode === &#39;development&#39;) ? &#39;inline-source-map&#39; : false 有待斟酌。"/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Webpack",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/zhangyadong.me\/2020\/webpack\/"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "https:\/\/zhangyadong.me\/cover.png",
+    "width":  800 ,
+    "height":  600 
+  },
+  "genre": "posts",
+  
+  "wordcount":  37 ,
+  "url": "https:\/\/zhangyadong.me\/2020\/webpack\/",
+  "datePublished": "2020-07-30T01:23:00\x2b08:00",
+  "dateModified": "2020-07-30T01:23:00\x2b08:00",
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mai",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/zhangyadong.me\/logo.png",
+      "width":  127 ,
+      "height":  40 
+    }
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Mai"
+  },
+  "description": ""
+}
+</script>
+</head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="https://zhangyadong.me">Mai</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://zhangyadong.me">Mai</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Webpack</h1>
+        <div class="post-meta">
+            Written by <a href="https://zhangyadong.me" rel="author">Mai</a> with ♥ 
+                <span class="post-time">
+                    on <time datetime=2020-07-30 >30 July 2020</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                1 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>在使用 webpack <code>build</code> 项目时，提示文件大小超过限制，而且项目上线后加载特别特别慢，
+stackoverflow 了一下，原来 <code>webpack.config.js</code> 加了 <code>devtool: source-map</code> ，虽然有利于 <code>development</code> 时 debug，但是会影响网站性能，所以 <code>build</code> 时不需要
+<code>devtool</code> ，尝试之后，
+<code>bundle.js</code> 大小缩至 1/6， 至于怎么解决，是 <code>webpack.config.js</code> 拆分成 <code>webpack.dev.js</code> 和
+<code>webpack.prod.js</code> ，还是用三元运算符
+<code>devtool: (mode === 'development') ? 'inline-source-map' : false</code>
+有待斟酌。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Mai </span>
+                </p>
+            
+           
+            <p class="copyright-item">
+                    <span>Words:</span>
+                   <span>37</span>
+            </p>
+            
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=https%3a%2f%2fzhangyadong.me%2f2020%2fwebpack%2f&amp;text=Webpack&amp;via=Tom61319231" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+        
+      
+
+          
+
+          
+
+          
+
+          
+</span>
+                
+            </p>
+
+             
+            <p class="copyright-item">
+                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> · 
+                <span><a href="https://zhangyadong.me">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://zhangyadong.me/2020/carousel/" class="prev" rel="prev" title="Carousel"><i class="iconfont icon-dajiantou"></i>&nbsp;Carousel</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+          <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      (function() {
+          
+          
+          if (window.location.hostname == "localhost")
+              return;
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          var disqus_shortname = 'yourdiscussshortname';
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://zhangyadong.me">Mai</a> | </span>
+         
+
+		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

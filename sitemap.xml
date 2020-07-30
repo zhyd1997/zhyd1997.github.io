@@ -1,37 +1,112 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <url>
-    <loc>https://zhangyadong.me/about/</loc>
-  </url>
+    <url>
+      <loc>https://zhangyadong.me/posts/</loc>
+      
+      <lastmod>2020-07-30T01:23:00+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
   
-  <url>
-    <loc>https://zhangyadong.me/carousel/</loc>
-  </url>
+    <url>
+      <loc>https://zhangyadong.me/2020/webpack/</loc>
+      
+      <lastmod>2020-07-30T01:23:00+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
   
-  <url>
-    <loc>https://zhangyadong.me/categories/</loc>
-  </url>
+    <url>
+      <loc>https://zhangyadong.me/2020/carousel/</loc>
+      
+      <lastmod>2020-07-30T01:21:00+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
   
-  <url>
-    <loc>https://zhangyadong.me/code_review/</loc>
-  </url>
+    <url>
+      <loc>https://zhangyadong.me/2020/code_review/</loc>
+      
+      <lastmod>2020-07-30T01:04:00+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
   
-  <url>
-    <loc>https://zhangyadong.me/</loc>
-  </url>
+    <url>
+      <loc>https://zhangyadong.me/about/</loc>
+      
+      <lastmod>2020-07-30T01:03:00+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
   
-  <url>
-    <loc>https://zhangyadong.me/interview/</loc>
-  </url>
+    <url>
+      <loc>https://zhangyadong.me/</loc>
+      
+      <lastmod>2020-07-30T01:03:00+08:00</lastmod>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
   
-  <url>
-    <loc>https://zhangyadong.me/tags/</loc>
-  </url>
+    <url>
+      <loc>https://zhangyadong.me/categories/</loc>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
   
-  <url>
-    <loc>https://zhangyadong.me/webpack/</loc>
-  </url>
+    <url>
+      <loc>https://zhangyadong.me/tags/</loc>
+      
+      
+      <changefreq>monthly</changefreq>
+      
+      
+      <priority>0.5</priority>
+      
+      
+    </url>
   
 </urlset>
