@@ -5,7 +5,7 @@
     <description>Recent content in Mai on Mai</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Jun 2020 01:03:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2020 01:03:00 +0800</lastBuildDate>
     <atom:link href="https://zhangyadong.me/" rel="self" type="application/rss+xml" />
     
     <item>
@@ -20,7 +20,7 @@
     <item>
       <title>About me</title>
       <link>https://zhangyadong.me/about/</link>
-      <pubDate>Mon, 01 Jun 2020 01:03:00 +0800</pubDate>
+      <pubDate>Wed, 01 Apr 2020 01:03:00 +0800</pubDate>
       
       <guid>https://zhangyadong.me/about/</guid>
       <description>&lt;p&gt;比较 geek，文档只看官方的，比如 MDN，javascript.info，绝大多数开发问题都可以通过官方文档解决，github issue，stackoverflow 也是经常解决问题的工具&lt;/p&gt;
