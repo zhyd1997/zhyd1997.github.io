@@ -1,731 +1,345 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-  <meta http-equiv="content-type" content="text/html;charset=utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noodp"/>
-  
-  
-  
-  
-  
-  <link rel="prev" href="https://zhangyadong.me/2020/webpack/" />
-  
-  <link rel="canonical" href="https://zhangyadong.me/2020/carousel/" />
-  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <title>
-       
-       
-           Carousel | Mai
-       
-  </title>
-  <meta name="title" content="Carousel | Mai">
-    
-  
-  <link rel="stylesheet" href="/font/iconfont.css">
-  <link rel="stylesheet" href="/css/main.min.css">
-
-
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Carousel"/>
-<meta name="twitter:description" content="大佬太强了，教我撸了个轮播图 初衷  CSS 基础布局的学习和练习 JavaScript 语法和逻辑的学习和练习 学会封装组件  项目地址 JSRUN , gitee , Github
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="chrome=1"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><link rel=prev href=https://zhangyadong.me/2020/webpack/><link rel=canonical href=https://zhangyadong.me/2020/carousel/><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"><title>Carousel | Mai</title><meta name=title content="Carousel | Mai"><link rel=stylesheet href=/font/iconfont.css><link rel=stylesheet href=/css/main.min.css><meta name=twitter:card content="summary"><meta name=twitter:title content="Carousel"><meta name=twitter:description content="大佬太强了，教我撸了个轮播图 初衷  CSS 基础布局的学习和练习 JavaScript 语法和逻辑的学习和练习 学会封装组件  项目地址 JSRUN , gitee , Github
 整体思路 使用 绝对定位 方法使 4 个 div 元素叠在一起
-这只是 CSS 部分 div 部分 // parent element .carousel-wrapper { position: relative; // 设置宽高 width: 300px; height: 150px; } // children element .carousel-item { position: absolute; display: none; // 和 parent 宽高保持一致 width: 100%; height: 100%; } // 显示当前 div .carousel-wrapper .carousel-item_current { display: block; } indicator 部分  让 indicator 靠近底部，显示在 div 上面  ."/>
-
-  <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Carousel",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https:\/\/zhangyadong.me\/2020\/carousel\/"
-  },
-  "image": {
-    "@type": "ImageObject",
-    "url": "https:\/\/zhangyadong.me\/cover.png",
-    "width":  800 ,
-    "height":  600 
-  },
-  "genre": "posts",
-  
-  "wordcount":  926 ,
-  "url": "https:\/\/zhangyadong.me\/2020\/carousel\/",
-  "datePublished": "2020-04-17T01:21:00\x2b08:00",
-  "dateModified": "2020-04-17T01:21:00\x2b08:00",
-  
-  "publisher": {
-    "@type": "Organization",
-    "name": "梓川",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https:\/\/zhangyadong.me\/logo.png",
-      "width":  127 ,
-      "height":  40 
-    }
-  },
-  "author": {
-    "@type": "Person",
-    "name": "梓川"
-  },
-  "description": ""
+这只是 CSS 部分 div 部分 // parent element .carousel-wrapper { position: relative; // 设置宽高 width: 300px; height: 150px; } // children element .carousel-item { position: absolute; display: none; // 和 parent 宽高保持一致 width: 100%; height: 100%; } // 显示当前 div .carousel-wrapper .carousel-item_current { display: block; } indicator 部分  让 indicator 靠近底部，显示在 div 上面  ."><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Carousel","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/zhangyadong.me\/2020\/carousel\/"},"image":{"@type":"ImageObject","url":"https:\/\/zhangyadong.me\/cover.png","width":800,"height":600},"genre":"posts","wordcount":926,"url":"https:\/\/zhangyadong.me\/2020\/carousel\/","datePublished":"2020-04-17T01:21:00\x2b08:00","dateModified":"2020-04-17T01:21:00\x2b08:00","publisher":{"@type":"Organization","name":"梓川","logo":{"@type":"ImageObject","url":"https:\/\/zhangyadong.me\/logo.png","width":127,"height":40}},"author":{"@type":"Person","name":"梓川"},"description":""}</script></head><body><div class=wrapper><nav class=navbar><div class=container><div class="navbar-header header-logo"><a href=https://zhangyadong.me>Mai</a></div><div class="menu navbar-right"><a class=menu-item href=/posts/>Blog</a>
+<a class=menu-item href=/categories/>Categories</a>
+<a class=menu-item href=/about>About</a>
+<a href=javascript:void(0); class=theme-switch><i class="iconfont icon-sun"></i></a>&nbsp;</div></div></nav><nav class=navbar-mobile id=nav-mobile style=display:none><div class=container><div class=navbar-header><div><a href=javascript:void(0); class=theme-switch><i class="iconfont icon-sun"></i></a>&nbsp;<a href=https://zhangyadong.me>Mai</a></div><div class=menu-toggle><span></span><span></span><span></span></div></div><div class=menu id=mobile-menu><a class=menu-item href=/posts/>Blog</a>
+<a class=menu-item href=/categories/>Categories</a>
+<a class=menu-item href=/about>About</a></div></div></nav><main class=main><div class=container><article class=post-warp><header class=post-header><h1 class=post-title>Carousel</h1><div class=post-meta>Written by <a href=https://zhangyadong.me rel=author>梓川</a> with ♥
+<span class=post-time>on <time datetime=2020-04-17>17 April 2020</time></span>
+in
+<i class="iconfont icon-folder"></i><span class=post-category><a href=https://zhangyadong.me/categories/css/>CSS</a></span>
+<i class="iconfont icon-timer"></i>5 min</div></header><div class=post-content><h2 id=大佬-太强了-教我撸了个轮播图><a href=https://segmentfault.com/u/stillsilly>大佬</a>太强了，教我撸了个轮播图</h2><h3 id=初衷>初衷</h3><ol><li>CSS 基础布局的学习和练习</li><li>JavaScript 语法和逻辑的学习和练习</li><li>学会封装组件</li></ol><h3 id=项目地址>项目地址</h3><p><a href=http://jsrun.net/iHfKp/edit>JSRUN</a> , <a href=https://gitee.com/write%5Fa%5Fcarousel/carousel>gitee</a> , <a href=https://github.com/zhyd1997/Carousel>Github</a></p><h2 id=整体思路>整体思路</h2><p>使用 <strong>绝对定位</strong> 方法使 4 个 <code>div</code> 元素叠在一起</p><h2 id=这只是-css-部分>这只是 CSS 部分</h2><h3 id=div-部分><code>div</code> 部分</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css><span style=color:#f92672>//</span> <span style=color:#f92672>parent</span> <span style=color:#f92672>element</span>
+.<span style=color:#a6e22e>carousel-wrapper</span> {
+    <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>relative</span>;
+    <span style=color:#960050;background-color:#1e0010>//</span> <span style=color:#960050;background-color:#1e0010>设置宽高</span>
+    <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>300</span><span style=color:#66d9ef>px</span>;
+    <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>150</span><span style=color:#66d9ef>px</span>;
 }
-</script>
-</head>
-
-  
-
-
-
-  <body class="">
-    <div class="wrapper">
-        <nav class="navbar">
-    <div class="container">
-        <div class="navbar-header header-logo">
-        	<a href="https://zhangyadong.me">Mai</a>
-        </div>
-        <div class="menu navbar-right">
-                
-                
-                <a class="menu-item" href="/posts/" title="">Blog</a>
-                
-                <a class="menu-item" href="/categories/" title="">Categories</a>
-                
-                <a class="menu-item" href="/about" title="">About</a>
-                
-                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
-        </div>
-    </div>
-</nav>
-<nav class="navbar-mobile" id="nav-mobile" style="display: none">
-     <div class="container">
-        <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="https://zhangyadong.me">Mai</a></div>
-            <div class="menu-toggle">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-     
-          <div class="menu" id="mobile-menu">
-                
-                
-                <a class="menu-item" href="/posts/" title="">Blog</a>
-                
-                <a class="menu-item" href="/categories/" title="">Categories</a>
-                
-                <a class="menu-item" href="/about" title="">About</a>
-                
-        </div>
-    </div>
-</nav>
-
-    	 <main class="main">
-          <div class="container">
-      		
-<article class="post-warp">
-    <header class="post-header">
-        <h1 class="post-title">Carousel</h1>
-        <div class="post-meta">
-            Written by <a href="https://zhangyadong.me" rel="author">梓川</a> with ♥ 
-                <span class="post-time">
-                    on <time datetime=2020-04-17 >17 April 2020</time>
-                </span>
-                in
-                
-                <i class="iconfont icon-timer"></i>
-                5 min
-        </div>
-    </header>
-    <div class="post-content">
-        
-
-        
-
-        
-        
-     
-          
-          
-          
-
-          
-          
-          
-
-          <h2 id="大佬-太强了-教我撸了个轮播图"><a href="https://segmentfault.com/u/stillsilly">大佬</a>太强了，教我撸了个轮播图</h2>
-<h3 id="初衷">初衷</h3>
-<ol>
-<li>CSS 基础布局的学习和练习</li>
-<li>JavaScript 语法和逻辑的学习和练习</li>
-<li>学会封装组件</li>
-</ol>
-<h3 id="项目地址">项目地址</h3>
-<p><a href="http://jsrun.net/iHfKp/edit">JSRUN</a> , <a href="https://gitee.com/write%5Fa%5Fcarousel/carousel">gitee</a> , <a href="https://github.com/zhyd1997/Carousel">Github</a></p>
-<h2 id="整体思路">整体思路</h2>
-<p>使用 <strong>绝对定位</strong> 方法使 4 个 <code>div</code> 元素叠在一起</p>
-<h2 id="这只是-css-部分">这只是 CSS 部分</h2>
-<h3 id="div-部分"><code>div</code> 部分</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#f92672">//</span> <span style="color:#f92672">parent</span> <span style="color:#f92672">element</span>
-.<span style="color:#a6e22e">carousel-wrapper</span> {
-    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">relative</span>;
-    <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">设置宽高</span>
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">300</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">150</span><span style="color:#66d9ef">px</span>;
+<span style=color:#f92672>//</span> <span style=color:#f92672>children</span> <span style=color:#f92672>element</span>
+.<span style=color:#a6e22e>carousel-item</span> {
+    <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>absolute</span>;
+    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>none</span>;
+    <span style=color:#960050;background-color:#1e0010>//</span> <span style=color:#960050;background-color:#1e0010>和</span> <span style=color:#960050;background-color:#1e0010>parent</span> <span style=color:#960050;background-color:#1e0010>宽高保持一致</span>
+    <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+    <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
 }
-<span style="color:#f92672">//</span> <span style="color:#f92672">children</span> <span style="color:#f92672">element</span>
-.<span style="color:#a6e22e">carousel-item</span> {
-    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
-    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">none</span>;
-    <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">和</span> <span style="color:#960050;background-color:#1e0010">parent</span> <span style="color:#960050;background-color:#1e0010">宽高保持一致</span>
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+<span style=color:#f92672>//</span> <span style=color:#f92672>显示当前</span> <span style=color:#f92672>div</span>
+.<span style=color:#a6e22e>carousel-wrapper</span> .<span style=color:#a6e22e>carousel-item_current</span> {
+    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>block</span>;
 }
-<span style="color:#f92672">//</span> <span style="color:#f92672">显示当前</span> <span style="color:#f92672">div</span>
-.<span style="color:#a6e22e">carousel-wrapper</span> .<span style="color:#a6e22e">carousel-item_current</span> {
-    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
-}
-</code></pre></div><h3 id="indicator-部分">indicator 部分</h3>
-<ul>
-<li>让 indicator 靠近底部，显示在 <code>div</code> 上面</li>
-</ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">indicator-list</span> {
-    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">block</span>;
-    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
-<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#66d9ef">z-index</span>: <span style="color:#ae81ff">999</span>;
+</code></pre></div><h3 id=indicator-部分>indicator 部分</h3><ul><li>让 indicator 靠近底部，显示在 <code>div</code> 上面</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>indicator-list</span> {
+    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>block</span>;
+    <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>absolute</span>;
+    <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+    <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>10</span><span style=color:#66d9ef>px</span>;
+    <span style=color:#66d9ef>bottom</span>: <span style=color:#ae81ff>15</span><span style=color:#66d9ef>px</span>;
+<span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#66d9ef>z-index</span>: <span style=color:#ae81ff>999</span>;
 </span>}
 
-.<span style="color:#a6e22e">indicator-item</span> {
-    <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">green</span>;
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">2.5</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span><span style="color:#f92672">-</span><span style="color:#66d9ef">block</span>;
+.<span style=color:#a6e22e>indicator-item</span> {
+    <span style=color:#66d9ef>background-color</span>: <span style=color:#66d9ef>green</span>;
+    <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>10</span><span style=color:#66d9ef>px</span>;
+    <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>2.5</span><span style=color:#66d9ef>px</span>;
+    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>inline</span><span style=color:#f92672>-</span><span style=color:#66d9ef>block</span>;
 }
 
-.<span style="color:#a6e22e">indicator-item_current</span> {
-    <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">blue</span>;
-}</code></pre></div>
-<ul>
-<li>水平居中，去掉换行符导致的间距</li>
-</ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">indicator-list</span> {
-    <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>;
-    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">0</span>;
+.<span style=color:#a6e22e>indicator-item_current</span> {
+    <span style=color:#66d9ef>background-color</span>: <span style=color:#66d9ef>blue</span>;
+}</code></pre></div><ul><li>水平居中，去掉换行符导致的间距</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>indicator-list</span> {
+    <span style=color:#66d9ef>text-align</span>: <span style=color:#66d9ef>center</span>;
+    <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0</span>;
 }
-</code></pre></div><ul>
-<li>增加间距</li>
-</ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">indicator-item</span> {
-    <span style="color:#66d9ef">margin-left</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">margin-right</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span>;
+</code></pre></div><ul><li>增加间距</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>indicator-item</span> {
+    <span style=color:#66d9ef>margin-left</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>px</span>;
+    <span style=color:#66d9ef>margin-right</span>: <span style=color:#ae81ff>2</span><span style=color:#66d9ef>px</span>;
 }
-</code></pre></div><h3 id="arrow-部分">arrow 部分</h3>
-<p>使用行内元素 <code>span</code></p>
-<ul>
-<li>设置水平位置</li>
-</ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">arrow</span> {
-    <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">black</span>;
-    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
-    <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline</span><span style="color:#f92672">-</span><span style="color:#66d9ef">block</span>;
-    <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">25</span><span style="color:#66d9ef">px</span>;
+</code></pre></div><h3 id=arrow-部分>arrow 部分</h3><p>使用行内元素 <code>span</code></p><ul><li>设置水平位置</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>arrow</span> {
+    <span style=color:#66d9ef>background-color</span>: <span style=color:#66d9ef>black</span>;
+    <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>absolute</span>;
+    <span style=color:#66d9ef>display</span>: <span style=color:#66d9ef>inline</span><span style=color:#f92672>-</span><span style=color:#66d9ef>block</span>;
+    <span style=color:#66d9ef>font-size</span>: <span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>25</span><span style=color:#66d9ef>px</span>;
+    <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>25</span><span style=color:#66d9ef>px</span>;
 }
 
-.<span style="color:#a6e22e">arrow-left</span> {
-    <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
+.<span style=color:#a6e22e>arrow-left</span> {
+    <span style=color:#66d9ef>left</span>: <span style=color:#ae81ff>15</span><span style=color:#66d9ef>px</span>;
 }
 
-.<span style="color:#a6e22e">arrow-right</span> {
-    <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">15</span><span style="color:#66d9ef">px</span>;
+.<span style=color:#a6e22e>arrow-right</span> {
+    <span style=color:#66d9ef>right</span>: <span style=color:#ae81ff>15</span><span style=color:#66d9ef>px</span>;
 }
-</code></pre></div><ul>
-<li>垂直居中</li>
-</ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">arrow</span> {
-    <span style="color:#66d9ef">margin</span>: <span style="color:#66d9ef">auto</span>;
-    <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">0</span>;
+</code></pre></div><ul><li>垂直居中</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>arrow</span> {
+    <span style=color:#66d9ef>margin</span>: <span style=color:#66d9ef>auto</span>;
+    <span style=color:#66d9ef>top</span>: <span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>bottom</span>: <span style=color:#ae81ff>0</span>;
 }
-</code></pre></div><ul>
-<li>形状改为圆形，设置不透明度</li>
-</ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">arrow</span> {
-    <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">50</span><span style="color:#66d9ef">%</span>;
-    <span style="color:#66d9ef">background-color</span>: rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.2</span>);
+</code></pre></div><ul><li>形状改为圆形，设置不透明度</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>arrow</span> {
+    <span style=color:#66d9ef>border-radius</span>: <span style=color:#ae81ff>50</span><span style=color:#66d9ef>%</span>;
+    <span style=color:#66d9ef>background-color</span>: rgba(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0.2</span>);
 }
-</code></pre></div><ul>
-<li>改变 <code>:hover</code> 不透明度</li>
-</ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">arrow</span>:<span style="color:#a6e22e">hover</span> {
-    <span style="color:#66d9ef">background-color</span>: rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.4</span>);
+</code></pre></div><ul><li>改变 <code>:hover</code> 不透明度</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>arrow</span>:<span style=color:#a6e22e>hover</span> {
+    <span style=color:#66d9ef>background-color</span>: rgba(<span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>0.4</span>);
 }
-</code></pre></div><ul>
-<li>添加 <code>cursor</code></li>
-</ul>
-<!-- raw HTML omitted -->
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">indicator-item</span> {
-    <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+</code></pre></div><ul><li>添加 <code>cursor</code></li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>indicator-item</span> {
+    <span style=color:#66d9ef>cursor</span>: <span style=color:#66d9ef>pointer</span>;
 }
 
-.<span style="color:#a6e22e">arrow</span> {
-    <span style="color:#66d9ef">cursor</span>: <span style="color:#66d9ef">pointer</span>;
+.<span style=color:#a6e22e>arrow</span> {
+    <span style=color:#66d9ef>cursor</span>: <span style=color:#66d9ef>pointer</span>;
 }
-</code></pre></div><h2 id="右箭头的-onclick-事件绑定">右箭头的 <code>onclick</code> 事件绑定</h2>
-<h3 id="选择元素">选择元素</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elArrowRight</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#e6db74">&#39;arrow-right&#39;</span>)[<span style="color:#ae81ff">0</span>];
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elListCarouselItem</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementsByClassName</span>(<span style="color:#e6db74">&#39;carousel-item&#39;</span>);
+</code></pre></div><h2 id=右箭头的-onclick-事件绑定>右箭头的 <code>onclick</code> 事件绑定</h2><h3 id=选择元素>选择元素</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>elArrowRight</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementsByClassName</span>(<span style=color:#e6db74>&#39;arrow-right&#39;</span>)[<span style=color:#ae81ff>0</span>];
+<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>elListCarouselItem</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementsByClassName</span>(<span style=color:#e6db74>&#39;carousel-item&#39;</span>);
 </code></pre></div><p>事件绑定是发生在 <code>element</code> 身上的，
 <code>document.getElementsByClassName()</code> 返回值是 (array-like object)
-类数组对象 <code>HTMLCollection</code> ，类名为 <code>arrow-right</code> 的元素是当前要绑定的元素，对象后面跟 <code>[0]</code> 即可。</p>
-<h3 id="从-console-dot-log-开始">从 <code>console.log()</code> 开始</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 注意变量作用域
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">elArrowRight</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleClick</span> () {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oldIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span>;
+类数组对象 <code>HTMLCollection</code> ，类名为 <code>arrow-right</code> 的元素是当前要绑定的元素，对象后面跟 <code>[0]</code> 即可。</p><h3 id=从-console-dot-log-开始>从 <code>console.log()</code> 开始</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#75715e>// 注意变量作用域
+</span><span style=color:#75715e></span>
+<span style=color:#a6e22e>elArrowRight</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>handleClick</span> () {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>oldIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span>;
 
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span>) { <span style="color:#75715e">// 点击最后一个 div 要切回第一个 div
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    } <span style="color:#66d9ef">else</span> {
-      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>&gt;=</span> <span style=color:#ae81ff>3</span>) { <span style=color:#75715e>// 点击最后一个 div 要切回第一个 div
+</span><span style=color:#75715e></span>      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+    } <span style=color:#66d9ef>else</span> {
+      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>;
     }
 
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;现在是第 &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">oldIndex</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; 图显示，应该改成第 &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; 图显示&#39;</span>);
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;现在是第 &#39;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>oldIndex</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39; 图显示，应该改成第 &#39;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39; 图显示&#39;</span>);
 }
-</code></pre></div><h3 id="效果实现">效果实现</h3>
-<p><code>div</code> 的隐藏和显示已经用 <code>css</code> 实现了，逻辑实现 <code>console.log()</code> 描述的也很清楚，接下来接下来要做的就是具体效果，改变 <code>elListCarouselItem</code> 的 <code>carousel-item_current</code> 位置，即点击右箭头之后，该 <code>class</code> 在当前 <code>&lt;div&gt;</code> 中删除，添加至下一个 <code>&lt;div&gt;</code> 中，实现方法用
-<code>classList</code> 即可：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">oldIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-<span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">currentIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-</code></pre></div><p><strong>左箭头的实现方法同理，不再赘述。</strong></p>
-<h3 id="优化">优化</h3>
-<h4 id="getelementsbyclassname-vs-queryselector"><code>getElementsByClassName()</code> <strong>vs</strong> <code>querySelector()</code></h4>
-<p>遇事不决，stackoverflow</p>
-<p>论坛给出的<a href="https://stackoverflow.com/questions/14377590/queryselector-and-queryselectorall-vs-getelementsbyclassname-and-getelementbyid">回答</a>是：querySelector 适用范围更广，比如选择 <code>&lt;li&gt;</code> 元素.</p>
-<p>So，优化后的代码如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elArrowRight</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.arrow-right&#39;</span>);
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elListCarouselItem</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.carousel-item&#39;</span>);
-</code></pre></div><h4 id="handleclick"><code>handleClick()</code></h4>
-<p>这里加上函数名多此一举，直接用匿名函数</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">elArrowRight</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {...};
-</code></pre></div><h2 id="指示器的事件委托">指示器的事件委托</h2>
-<p>现在要实现的功能是，点击指示器，切换至对应 <code>div</code> ，可以使用循环给 <code>indicator-item</code> 绑定事件，我太懒，直接用了事件委托的方法，参考<a href="https://javascript.info/event-delegation">这篇文档</a>。</p>
-<p>用事件委托的方法，绑定的元素就该是 <code>indicator-list</code> ，这就是其优于第一种方法的地方。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elIndicatorList</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.indicator-list&#39;</span>);
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elIndicatorItem</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">querySelectorAll</span>(<span style="color:#e6db74">&#39;.indicator-item&#39;</span>);
-</code></pre></div><p>同样，先做逻辑，再实现功能</p>
-<h3 id="console-dot-log-对应-indicator-item-数字"><code>console.log()</code> 对应 <code>indicator-item</code> 数字</h3>
-<p>要获取对应数字，须在 <code>.html</code> 自定义 <code>data-*</code> 属性， 即：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">data-index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;indicator-item indicator-item_current&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">data-index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;indicator-item&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">data-index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;indicator-item&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">data-index</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;3&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;indicator-item&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</code></pre></div><p>然后在 <code>.js</code> 文件中通过 <code>dataset</code> 获取属性。这里，我们需要的数字 <code>index</code> ，而不是字符串，需要将字符串转化为数字，有 <code>parseInt()</code> 和 <code>Number()</code> 可供选择，<a href="https://stackoverflow.com/questions/4090518/what-is-the-difference-between-parseint-and-number">查了一下</a> ,选了 <code>parseInt()</code> ：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">elIndicatorList</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>;
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">dataset</span>.<span style="color:#a6e22e">index</span>, <span style="color:#ae81ff">10</span>);
+</code></pre></div><h3 id=效果实现>效果实现</h3><p><code>div</code> 的隐藏和显示已经用 <code>css</code> 实现了，逻辑实现 <code>console.log()</code> 描述的也很清楚，接下来接下来要做的就是具体效果，改变 <code>elListCarouselItem</code> 的 <code>carousel-item_current</code> 位置，即点击右箭头之后，该 <code>class</code> 在当前 <code>&lt;div></code> 中删除，添加至下一个 <code>&lt;div></code> 中，实现方法用
+<code>classList</code> 即可：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>oldIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+<span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>currentIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+</code></pre></div><p><strong>左箭头的实现方法同理，不再赘述。</strong></p><h3 id=优化>优化</h3><h4 id=getelementsbyclassname-vs-queryselector><code>getElementsByClassName()</code> <strong>vs</strong> <code>querySelector()</code></h4><p>遇事不决，stackoverflow</p><p>论坛给出的<a href=https://stackoverflow.com/questions/14377590/queryselector-and-queryselectorall-vs-getelementsbyclassname-and-getelementbyid>回答</a>是：querySelector 适用范围更广，比如选择 <code>&lt;li></code> 元素.</p><p>So，优化后的代码如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>elArrowRight</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#39;.arrow-right&#39;</span>);
+<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>elListCarouselItem</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#39;.carousel-item&#39;</span>);
+</code></pre></div><h4 id=handleclick><code>handleClick()</code></h4><p>这里加上函数名多此一举，直接用匿名函数</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>elArrowRight</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span> () {...};
+</code></pre></div><h2 id=指示器的事件委托>指示器的事件委托</h2><p>现在要实现的功能是，点击指示器，切换至对应 <code>div</code> ，可以使用循环给 <code>indicator-item</code> 绑定事件，我太懒，直接用了事件委托的方法，参考<a href=https://javascript.info/event-delegation>这篇文档</a>。</p><p>用事件委托的方法，绑定的元素就该是 <code>indicator-list</code> ，这就是其优于第一种方法的地方。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>elIndicatorList</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#39;.indicator-list&#39;</span>);
+<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>elIndicatorItem</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>querySelectorAll</span>(<span style=color:#e6db74>&#39;.indicator-item&#39;</span>);
+</code></pre></div><p>同样，先做逻辑，再实现功能</p><h3 id=console-dot-log-对应-indicator-item-数字><code>console.log()</code> 对应 <code>indicator-item</code> 数字</h3><p>要获取对应数字，须在 <code>.html</code> 自定义 <code>data-*</code> 属性， 即：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>data-index</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;0&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;indicator-item indicator-item_current&#34;</span>&gt;&lt;/<span style=color:#f92672>span</span>&gt;
+&lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>data-index</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;1&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;indicator-item&#34;</span>&gt;&lt;/<span style=color:#f92672>span</span>&gt;
+&lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>data-index</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;2&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;indicator-item&#34;</span>&gt;&lt;/<span style=color:#f92672>span</span>&gt;
+&lt;<span style=color:#f92672>span</span> <span style=color:#a6e22e>data-index</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;3&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;indicator-item&#34;</span>&gt;&lt;/<span style=color:#f92672>span</span>&gt;
+</code></pre></div><p>然后在 <code>.js</code> 文件中通过 <code>dataset</code> 获取属性。这里，我们需要的数字 <code>index</code> ，而不是字符串，需要将字符串转化为数字，有 <code>parseInt()</code> 和 <code>Number()</code> 可供选择，<a href=https://stackoverflow.com/questions/4090518/what-is-the-difference-between-parseint-and-number>查了一下</a> ,选了 <code>parseInt()</code> ：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>elIndicatorList</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>target</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>;
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>dataset</span>.<span style=color:#a6e22e>index</span>, <span style=color:#ae81ff>10</span>);
 
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">targetIndex</span>);
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>targetIndex</span>);
 }
 </code></pre></div><p>这样，就可以获得所点击 <code>indicator-item</code> 对应的数字了。现在有一个 <code>corner case</code> ，
-<code>indicator-list</code> 是一个和父元素等宽的元素，如果点击 <code>indicator-item</code> 之外的部分会有 bug，处理方式是事件委托仅对包含 <code>indicator-item</code> 类的元素起作用，点击其他位置即返回：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">elIndicatorList</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>;
+<code>indicator-list</code> 是一个和父元素等宽的元素，如果点击 <code>indicator-item</code> 之外的部分会有 bug，处理方式是事件委托仅对包含 <code>indicator-item</code> 类的元素起作用，点击其他位置即返回：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>elIndicatorList</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>target</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>;
 
-<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;indicator-item&#39;</span>) {
-</span><span style="display:block;width:100%;background-color:#3c3d38">      <span style="color:#66d9ef">return</span>;
-</span><span style="display:block;width:100%;background-color:#3c3d38">    }
+<span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>contains</span>(<span style=color:#e6db74>&#39;indicator-item&#39;</span>) {
+</span><span style=display:block;width:100%;background-color:#3c3d38>      <span style=color:#66d9ef>return</span>;
+</span><span style=display:block;width:100%;background-color:#3c3d38>    }
 </span>
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">dataset</span>.<span style="color:#a6e22e">index</span>, <span style="color:#ae81ff">10</span>);
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>dataset</span>.<span style=color:#a6e22e>index</span>, <span style=color:#ae81ff>10</span>);
 
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">targetIndex</span>);
+    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#a6e22e>targetIndex</span>);
 }
-</code></pre></div>
-<h3 id="功能实现">功能实现</h3>
-<p>实现方式和左右箭头的一样，关键是怎么知道上个状态的 <code>index</code> ，当前 <code>index</code> 即
+</code></pre></div><h3 id=功能实现>功能实现</h3><p>实现方式和左右箭头的一样，关键是怎么知道上个状态的 <code>index</code> ，当前 <code>index</code> 即
 <code>targetIndex</code> ，这里先用 <code>currentIndex</code> ，函数执行之后，将 <code>targetIndex</code> 赋给 <code>currentIndex</code>
-作为上个状态时的 <code>oldIndex</code> ，看能不能跑起来：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">elIndicatorList</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>;
+作为上个状态时的 <code>oldIndex</code> ，看能不能跑起来：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>elIndicatorList</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>target</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>;
 
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;indicator-item&#39;</span>)) {
-      <span style="color:#66d9ef">return</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>contains</span>(<span style=color:#e6db74>&#39;indicator-item&#39;</span>)) {
+      <span style=color:#66d9ef>return</span>;
     }
 
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">dataset</span>.<span style="color:#a6e22e">index</span>, <span style="color:#ae81ff">10</span>);
-<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oldIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span>; <span style="color:#75715e">// 前面已经定义 currentIndex 初始为 0
-</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>
-</span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">oldIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-</span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">targetIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-</span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#a6e22e">elIndicatorItem</span>[<span style="color:#a6e22e">oldIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
-</span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#a6e22e">elIndicatorItem</span>[<span style="color:#a6e22e">targetIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
-</span><span style="display:block;width:100%;background-color:#3c3d38">
-</span><span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">targetIndex</span>;
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>dataset</span>.<span style=color:#a6e22e>index</span>, <span style=color:#ae81ff>10</span>);
+<span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>oldIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span>; <span style=color:#75715e>// 前面已经定义 currentIndex 初始为 0
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style=color:#75715e></span>
+</span><span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>oldIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+</span><span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>targetIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+</span><span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#a6e22e>elIndicatorItem</span>[<span style=color:#a6e22e>oldIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
+</span><span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#a6e22e>elIndicatorItem</span>[<span style=color:#a6e22e>targetIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
+</span><span style=display:block;width:100%;background-color:#3c3d38>
+</span><span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>targetIndex</span>;
 </span>};
-</code></pre></div>
-<h2 id="整体优化">整体优化</h2>
-<h3 id="箭头和指示器同步">箭头和指示器同步</h3>
-<p>点击箭头或者指示器的时候，
-<code>indicator-item</code> 并不会发生变化，只需加如下两行代码即可：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">elIndicatorItem</span>[<span style="color:#a6e22e">oldIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
-<span style="color:#a6e22e">elIndicatorItme</span>[<span style="color:#a6e22e">currentIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
-</code></pre></div><h3 id="魔法数字问题">魔法数字问题</h3>
-<p>在箭头 <code>onclick</code> 事件绑定中，使用了数字 3 来表示最后一个 <code>div</code> 的索引，这个数字叫做魔法数字，可用 <code>LIST_LENGTH - 1</code> 表示：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">LIST_LENGTH</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">elCarouselItem</span>.<span style="color:#a6e22e">length</span>;
-</code></pre></div><h3 id="消除重复代码-高优先级">消除重复代码（ <em>高优先级</em> ）</h3>
-<p>当前三个点击事件的代码如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">elArrowRight</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oldIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span>;
+</code></pre></div><h2 id=整体优化>整体优化</h2><h3 id=箭头和指示器同步>箭头和指示器同步</h3><p>点击箭头或者指示器的时候，
+<code>indicator-item</code> 并不会发生变化，只需加如下两行代码即可：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>elIndicatorItem</span>[<span style=color:#a6e22e>oldIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
+<span style=color:#a6e22e>elIndicatorItme</span>[<span style=color:#a6e22e>currentIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
+</code></pre></div><h3 id=魔法数字问题>魔法数字问题</h3><p>在箭头 <code>onclick</code> 事件绑定中，使用了数字 3 来表示最后一个 <code>div</code> 的索引，这个数字叫做魔法数字，可用 <code>LIST_LENGTH - 1</code> 表示：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>LIST_LENGTH</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>elCarouselItem</span>.<span style=color:#a6e22e>length</span>;
+</code></pre></div><h3 id=消除重复代码-高优先级>消除重复代码（ <em>高优先级</em> ）</h3><p>当前三个点击事件的代码如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>elArrowRight</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>() {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>oldIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span>;
 
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">LIST_LENGTH</span>) { <span style="color:#75715e">// currentIndex &gt;= 4 即为 0
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    } <span style="color:#66d9ef">else</span> {
-      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>LIST_LENGTH</span>) { <span style=color:#75715e>// currentIndex &gt;= 4 即为 0
+</span><span style=color:#75715e></span>      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+    } <span style=color:#66d9ef>else</span> {
+      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>;
     }
 
-    <span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">oldIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-    <span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">currentIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-    <span style="color:#a6e22e">elIndicatorItem</span>[<span style="color:#a6e22e">oldIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
-    <span style="color:#a6e22e">elIndicatorItem</span>[<span style="color:#a6e22e">currentIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
+    <span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>oldIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+    <span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>currentIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+    <span style=color:#a6e22e>elIndicatorItem</span>[<span style=color:#a6e22e>oldIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
+    <span style=color:#a6e22e>elIndicatorItem</span>[<span style=color:#a6e22e>currentIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
 };
 
-<span style="color:#a6e22e">elArrowLeft</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oldIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span>;
+<span style=color:#a6e22e>elArrowLeft</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>() {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>oldIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span>;
 
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>) {
-      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">LIST_LENGTH</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
-    } <span style="color:#66d9ef">else</span> {
-      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>0</span>) {
+      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>LIST_LENGTH</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>;
+    } <span style=color:#66d9ef>else</span> {
+      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>;
     }
 
-    <span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">oldIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-    <span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">currentIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-    <span style="color:#a6e22e">elIndicatorItem</span>[<span style="color:#a6e22e">oldIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
-    <span style="color:#a6e22e">elIndicatorItem</span>[<span style="color:#a6e22e">currentIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
+    <span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>oldIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+    <span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>currentIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+    <span style=color:#a6e22e>elIndicatorItem</span>[<span style=color:#a6e22e>oldIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
+    <span style=color:#a6e22e>elIndicatorItem</span>[<span style=color:#a6e22e>currentIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
 };
 
-<span style="color:#a6e22e">elIndicatorList</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>;
+<span style=color:#a6e22e>elIndicatorList</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>target</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>;
 
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;indicator-item&#39;</span>)) {
-      <span style="color:#66d9ef">return</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>contains</span>(<span style=color:#e6db74>&#39;indicator-item&#39;</span>)) {
+      <span style=color:#66d9ef>return</span>;
     }
 
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">dataset</span>.<span style="color:#a6e22e">index</span>, <span style="color:#ae81ff">10</span>);
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oldIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span>;
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>dataset</span>.<span style=color:#a6e22e>index</span>, <span style=color:#ae81ff>10</span>);
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>oldIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span>;
 
-    <span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">oldIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-    <span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">targetIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-    <span style="color:#a6e22e">elIndicatorItem</span>[<span style="color:#a6e22e">oldIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
-    <span style="color:#a6e22e">elIndicatorItem</span>[<span style="color:#a6e22e">targetIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
+    <span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>oldIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+    <span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>targetIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+    <span style=color:#a6e22e>elIndicatorItem</span>[<span style=color:#a6e22e>oldIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
+    <span style=color:#a6e22e>elIndicatorItem</span>[<span style=color:#a6e22e>targetIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
 
-    <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">targetIndex</span>;
+    <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>targetIndex</span>;
 };
-</code></pre></div><p>观察发现，有大量很多可复用代码，现在要把这些代码抽取出来</p>
-<h4 id="changecurrentclassname--oldindex-currentindex"><code>changeCurrentClassName(oldIndex, currentIndex)</code></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">changeCurrentClassName</span>(<span style="color:#a6e22e">oldIndex</span>, <span style="color:#a6e22e">currentIndex</span>) {
-    <span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">oldIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-    <span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">currentIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-    <span style="color:#a6e22e">elIndicatorItem</span>[<span style="color:#a6e22e">oldIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
-    <span style="color:#a6e22e">elIndicatorItem</span>[<span style="color:#a6e22e">currentIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
+</code></pre></div><p>观察发现，有大量很多可复用代码，现在要把这些代码抽取出来</p><h4 id=changecurrentclassname--oldindex-currentindex><code>changeCurrentClassName(oldIndex, currentIndex)</code></h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>changeCurrentClassName</span>(<span style=color:#a6e22e>oldIndex</span>, <span style=color:#a6e22e>currentIndex</span>) {
+    <span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>oldIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+    <span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>currentIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+    <span style=color:#a6e22e>elIndicatorItem</span>[<span style=color:#a6e22e>oldIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
+    <span style=color:#a6e22e>elIndicatorItem</span>[<span style=color:#a6e22e>currentIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
 }
-</code></pre></div><p>现在整体代码变成这样了：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">elArrowRight</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oldIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span>;
+</code></pre></div><p>现在整体代码变成这样了：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>elArrowRight</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>() {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>oldIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span>;
 
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">LIST_LENGTH</span>) {
-      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    } <span style="color:#66d9ef">else</span> {
-      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>LIST_LENGTH</span>) {
+      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+    } <span style=color:#66d9ef>else</span> {
+      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>;
     }
 
-<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#a6e22e">changeCurrentClassName</span>(<span style="color:#a6e22e">oldIndex</span>, <span style="color:#a6e22e">currentIndex</span>);
+<span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#a6e22e>changeCurrentClassName</span>(<span style=color:#a6e22e>oldIndex</span>, <span style=color:#a6e22e>currentIndex</span>);
 </span>};
-<span style="color:#a6e22e">elArrowLeft</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oldIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span>;
+<span style=color:#a6e22e>elArrowLeft</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>() {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>oldIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span>;
 
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>) {
-      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">LIST_LENGTH</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
-    } <span style="color:#66d9ef">else</span> {
-      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>0</span>) {
+      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>LIST_LENGTH</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>;
+    } <span style=color:#66d9ef>else</span> {
+      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>;
     }
 
-<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#a6e22e">changeCurrentClassName</span>(<span style="color:#a6e22e">oldIndex</span>, <span style="color:#a6e22e">currentIndex</span>);
+<span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#a6e22e>changeCurrentClassName</span>(<span style=color:#a6e22e>oldIndex</span>, <span style=color:#a6e22e>currentIndex</span>);
 </span>};
-<span style="color:#a6e22e">elIndicatorList</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>;
+<span style=color:#a6e22e>elIndicatorList</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>target</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>;
 
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;indicator-item&#39;</span>)) {
-      <span style="color:#66d9ef">return</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>contains</span>(<span style=color:#e6db74>&#39;indicator-item&#39;</span>)) {
+      <span style=color:#66d9ef>return</span>;
     }
 
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">dataset</span>.<span style="color:#a6e22e">index</span>, <span style="color:#ae81ff">10</span>);
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">oldIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span>;
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>dataset</span>.<span style=color:#a6e22e>index</span>, <span style=color:#ae81ff>10</span>);
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>oldIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span>;
 
-<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#a6e22e">changeCurrentClassName</span>(<span style="color:#a6e22e">oldIndex</span>, <span style="color:#a6e22e">targetIndex</span>);
+<span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#a6e22e>changeCurrentClassName</span>(<span style=color:#a6e22e>oldIndex</span>, <span style=color:#a6e22e>targetIndex</span>);
 </span>
-    <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">targetIndex</span>;
+    <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>targetIndex</span>;
 };
-</code></pre></div>
-<p>这里的 index 也是可以抽取的，下一步就是处理 index</p>
-<h4 id="changecurrentindex--targetindex"><code>changeCurrentIndex(targetIndex)</code></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">changeCurrentIndex</span>(<span style="color:#a6e22e">targetIndex</span>) {
-    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">&gt;=</span> <span style="color:#a6e22e">LIST_LENGTH</span>) {
-      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
-      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">LIST_LENGTH</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
-    } <span style="color:#66d9ef">else</span> {
-      <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">targetIndex</span>;
+</code></pre></div><p>这里的 index 也是可以抽取的，下一步就是处理 index</p><h4 id=changecurrentindex--targetindex><code>changeCurrentIndex(targetIndex)</code></h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>changeCurrentIndex</span>(<span style=color:#a6e22e>targetIndex</span>) {
+    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>&gt;=</span> <span style=color:#a6e22e>LIST_LENGTH</span>) {
+      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
+    } <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>&lt;</span> <span style=color:#ae81ff>0</span>) {
+      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>LIST_LENGTH</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>;
+    } <span style=color:#66d9ef>else</span> {
+      <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>targetIndex</span>;
     }
 }
 </code></pre></div><p>前面获取上个状态的索引是通过 <code>oldIndex</code> ，其实用 <code>querySelector()</code>
-更简单：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">elArrowRight</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+更简单：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>elArrowRight</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>() {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>;
 
-    <span style="color:#a6e22e">changeCurrentIndex</span>(<span style="color:#a6e22e">targetIndex</span>);
-    <span style="color:#a6e22e">changeCurrentClassName</span>();
+    <span style=color:#a6e22e>changeCurrentIndex</span>(<span style=color:#a6e22e>targetIndex</span>);
+    <span style=color:#a6e22e>changeCurrentClassName</span>();
 };
 
-<span style="color:#a6e22e">elArrowLeft</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+<span style=color:#a6e22e>elArrowLeft</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>() {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>;
 
-    <span style="color:#a6e22e">changeCurrentIndex</span>(<span style="color:#a6e22e">targetIndex</span>);
-    <span style="color:#a6e22e">changeCurrentClassName</span>();
+    <span style=color:#a6e22e>changeCurrentIndex</span>(<span style=color:#a6e22e>targetIndex</span>);
+    <span style=color:#a6e22e>changeCurrentClassName</span>();
 };
 
-<span style="color:#a6e22e">elIndicatorList</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">event</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">dataset</span>.<span style="color:#a6e22e">index</span>, <span style="color:#ae81ff">10</span>);
+<span style=color:#a6e22e>elIndicatorList</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>dataset</span>.<span style=color:#a6e22e>index</span>, <span style=color:#ae81ff>10</span>);
 
-    <span style="color:#a6e22e">changeCurrentIndex</span>(<span style="color:#a6e22e">targetIndex</span>);
-    <span style="color:#a6e22e">changeCurrentClassName</span>();
+    <span style=color:#a6e22e>changeCurrentIndex</span>(<span style=color:#a6e22e>targetIndex</span>);
+    <span style=color:#a6e22e>changeCurrentClassName</span>();
 };
 
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">changeCurrentClassName</span>() {
-<span style="display:block;width:100%;background-color:#3c3d38">    document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.carousel-item_current&#39;</span>).<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-</span>    <span style="color:#a6e22e">elListCarouselItem</span>[<span style="color:#a6e22e">currentIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;carousel-item_current&#39;</span>);
-<span style="display:block;width:100%;background-color:#3c3d38">    document.<span style="color:#a6e22e">querySelector</span>(<span style="color:#e6db74">&#39;.indicator-item_current&#39;</span>).<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">remove</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
-</span>    <span style="color:#a6e22e">elIndicatorItem</span>[<span style="color:#a6e22e">currentIndex</span>].<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;indicator-item_current&#39;</span>);
-</code></pre></div>
-<h4 id="handleindexchange--targetindex"><code>handleIndexChange(targetIndex)</code></h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleIndexChange</span>(<span style="color:#a6e22e">targetIndex</span>) {
-    <span style="color:#a6e22e">changeCurrentIndex</span>(<span style="color:#a6e22e">targetIndex</span>);
-    <span style="color:#a6e22e">changeCurrentClassName</span>();
+<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>changeCurrentClassName</span>() {
+<span style=display:block;width:100%;background-color:#3c3d38>    document.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#39;.carousel-item_current&#39;</span>).<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+</span>    <span style=color:#a6e22e>elListCarouselItem</span>[<span style=color:#a6e22e>currentIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;carousel-item_current&#39;</span>);
+<span style=display:block;width:100%;background-color:#3c3d38>    document.<span style=color:#a6e22e>querySelector</span>(<span style=color:#e6db74>&#39;.indicator-item_current&#39;</span>).<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>remove</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
+</span>    <span style=color:#a6e22e>elIndicatorItem</span>[<span style=color:#a6e22e>currentIndex</span>].<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>add</span>(<span style=color:#e6db74>&#39;indicator-item_current&#39;</span>);
+</code></pre></div><h4 id=handleindexchange--targetindex><code>handleIndexChange(targetIndex)</code></h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>handleIndexChange</span>(<span style=color:#a6e22e>targetIndex</span>) {
+    <span style=color:#a6e22e>changeCurrentIndex</span>(<span style=color:#a6e22e>targetIndex</span>);
+    <span style=color:#a6e22e>changeCurrentClassName</span>();
 }
-</code></pre></div><p>处理一下 <code>corner case</code> ：如果当前索引和目标索引相等，即返回</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handleIndexChange</span>(<span style="color:#a6e22e">targetIndex</span>) {
-<span style="display:block;width:100%;background-color:#3c3d38">    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">currentIndex</span>) { <span style="color:#75715e">// 注意类型比较
-</span></span><span style="display:block;width:100%;background-color:#3c3d38"><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span>;
-</span><span style="display:block;width:100%;background-color:#3c3d38">    }
+</code></pre></div><p>处理一下 <code>corner case</code> ：如果当前索引和目标索引相等，即返回</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>handleIndexChange</span>(<span style=color:#a6e22e>targetIndex</span>) {
+<span style=display:block;width:100%;background-color:#3c3d38>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>===</span> <span style=color:#a6e22e>currentIndex</span>) { <span style=color:#75715e>// 注意类型比较
+</span></span><span style=display:block;width:100%;background-color:#3c3d38><span style=color:#75715e></span>      <span style=color:#66d9ef>return</span>;
+</span><span style=display:block;width:100%;background-color:#3c3d38>    }
 </span>
-    <span style="color:#a6e22e">changeCurrentIndex</span>(<span style="color:#a6e22e">targetIndex</span>);
-    <span style="color:#a6e22e">changeCurrentClassName</span>();
+    <span style=color:#a6e22e>changeCurrentIndex</span>(<span style=color:#a6e22e>targetIndex</span>);
+    <span style=color:#a6e22e>changeCurrentClassName</span>();
 }
-</code></pre></div>
-<p>最终代码如下：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">elArrowRight</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
-    <span style="color:#a6e22e">handleIndexChange</span>(<span style="color:#a6e22e">targetIndex</span>);
+</code></pre></div><p>最终代码如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#a6e22e>elArrowRight</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>() {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>;
+    <span style=color:#a6e22e>handleIndexChange</span>(<span style=color:#a6e22e>targetIndex</span>);
 };
 
-<span style="color:#a6e22e">elArrowLeft</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">currentIndex</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
-    <span style="color:#a6e22e">handleIndexChange</span>(<span style="color:#a6e22e">targetIndex</span>);
+<span style=color:#a6e22e>elArrowLeft</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>() {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>currentIndex</span> <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>;
+    <span style=color:#a6e22e>handleIndexChange</span>(<span style=color:#a6e22e>targetIndex</span>);
 };
 
-<span style="color:#a6e22e">elIndicatorList</span>.<span style="color:#a6e22e">onclick</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">functin</span>(<span style="color:#a6e22e">event</span>) {
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">target</span>;
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">classList</span>.<span style="color:#a6e22e">contains</span>(<span style="color:#e6db74">&#39;indicator-item&#39;</span>)) {
-      <span style="color:#66d9ef">return</span>;
+<span style=color:#a6e22e>elIndicatorList</span>.<span style=color:#a6e22e>onclick</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>functin</span>(<span style=color:#a6e22e>event</span>) {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>target</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>event</span>.<span style=color:#a6e22e>target</span>;
+    <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>classList</span>.<span style=color:#a6e22e>contains</span>(<span style=color:#e6db74>&#39;indicator-item&#39;</span>)) {
+      <span style=color:#66d9ef>return</span>;
     }
 
-    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">targetIndex</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">target</span>.<span style="color:#a6e22e">dataset</span>.<span style="color:#a6e22e">index</span>, <span style="color:#ae81ff">10</span>);
-    <span style="color:#a6e22e">handleIndexChange</span>(<span style="color:#a6e22e">targetIndex</span>);
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetIndex</span> <span style=color:#f92672>=</span> parseInt(<span style=color:#a6e22e>target</span>.<span style=color:#a6e22e>dataset</span>.<span style=color:#a6e22e>index</span>, <span style=color:#ae81ff>10</span>);
+    <span style=color:#a6e22e>handleIndexChange</span>(<span style=color:#a6e22e>targetIndex</span>);
 };
-</code></pre></div><h3 id="添加图片">添加图片</h3>
-<p>前面的操作都是基于不同背景色的 <code>&lt;div&gt;</code> ，现在可以将其替换为真实的图片，使用了图床外链，设置一下样式：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">carousel-item-img</span> {
-    <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
-    <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+</code></pre></div><h3 id=添加图片>添加图片</h3><p>前面的操作都是基于不同背景色的 <code>&lt;div></code> ，现在可以将其替换为真实的图片，使用了图床外链，设置一下样式：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>carousel-item-img</span> {
+    <span style=color:#66d9ef>width</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
+    <span style=color:#66d9ef>height</span>: <span style=color:#ae81ff>100</span><span style=color:#66d9ef>%</span>;
 }
-</code></pre></div><h3 id="优化-indicator-item-效果">优化 <code>indicator-item</code> 效果</h3>
-<p><code>::after::</code> 是 <code>css3</code> 为区分伪类和伪元素的写法，不兼容 IE8</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">indicator-item</span>::<span style="color:#a6e22e">after</span> {
-    <span style="color:#66d9ef">content</span>: <span style="color:#e6db74">&#39;&#39;</span>;
-    <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">absolute</span>;
-    <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">-3</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">-3</span><span style="color:#66d9ef">px</span>;
-    <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
-    <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">0</span>;
+</code></pre></div><h3 id=优化-indicator-item-效果>优化 <code>indicator-item</code> 效果</h3><p><code>::after::</code> 是 <code>css3</code> 为区分伪类和伪元素的写法，不兼容 IE8</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>indicator-item</span>::<span style=color:#a6e22e>after</span> {
+    <span style=color:#66d9ef>content</span>: <span style=color:#e6db74>&#39;&#39;</span>;
+    <span style=color:#66d9ef>position</span>: <span style=color:#66d9ef>absolute</span>;
+    <span style=color:#66d9ef>top</span>: <span style=color:#ae81ff>-3</span><span style=color:#66d9ef>px</span>;
+    <span style=color:#66d9ef>bottom</span>: <span style=color:#ae81ff>-3</span><span style=color:#66d9ef>px</span>;
+    <span style=color:#66d9ef>left</span>: <span style=color:#ae81ff>0</span>;
+    <span style=color:#66d9ef>right</span>: <span style=color:#ae81ff>0</span>;
 }
-</code></pre></div><p>给 <code>indicator-item</code> 添加 <code>transform</code> 效果，优化视觉体验：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">indicator-item</span>:<span style="color:#a6e22e">hover</span> {
-    <span style="color:#66d9ef">transform</span>: scale(<span style="color:#ae81ff">1.3</span>);
+</code></pre></div><p>给 <code>indicator-item</code> 添加 <code>transform</code> 效果，优化视觉体验：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>indicator-item</span>:<span style=color:#a6e22e>hover</span> {
+    <span style=color:#66d9ef>transform</span>: scale(<span style=color:#ae81ff>1.3</span>);
 }
 
-.<span style="color:#a6e22e">indicator-item_current</span> {
-    <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">blue</span>;
-    <span style="color:#66d9ef">transform</span>: scale(<span style="color:#ae81ff">1.3</span>);
+.<span style=color:#a6e22e>indicator-item_current</span> {
+    <span style=color:#66d9ef>background-color</span>: <span style=color:#66d9ef>blue</span>;
+    <span style=color:#66d9ef>transform</span>: scale(<span style=color:#ae81ff>1.3</span>);
 }
-</code></pre></div><h2 id="代码规范">代码规范</h2>
-<ol>
-<li><code>width</code> 在前， <code>height</code> 在后</li>
-<li>CSS <code>bem</code> 命名规范，eg: <code>.carousel-item_current</code> , <code>.indicator-item_current</code></li>
-<li>JavaScript 的 <code>camelCase</code> 命名法</li>
-<li>提炼函数，消除重复代码</li>
-<li>去除魔法数字</li>
-</ol>
-
-    </div>
-
-    <div class="post-copyright">
-             
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>梓川 </span>
-                </p>
-            
-           
-            <p class="copyright-item">
-                    <span>Words:</span>
-                   <span>926</span>
-            </p>
-            
-            <p class="copyright-item">
-                
-                <span>Share:</span>
-                <span>
-
-      
-        <a href="//twitter.com/share?url=https%3a%2f%2fzhangyadong.me%2f2020%2fcarousel%2f&amp;text=Carousel&amp;via=Tom61319231" target="_blank" title="Share on Twitter">
-          <i class="iconfont icon-twitter"></i>
-        </a>
-        
-      
-      
-      
-      
-      
-      
-      
-      
-        
-      
-        
-      
-
-          
-
-          
-
-          
-
-          
-</span>
-                
-            </p>
-
-             
-            <p class="copyright-item">
-                Released under <a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>
-            </p>
-            
-    </div>
-
-  
-    <div class="post-tags">
-        
-        <section>
-                <a href="javascript:window.history.back();">Back</a></span> · 
-                <span><a href="https://zhangyadong.me">Home</a></span>
-        </section>
-    </div>
-
-    <div class="post-nav">
-        
-        <a href="https://zhangyadong.me/2020/webpack/" class="prev" rel="prev" title="Webpack"><i class="iconfont icon-dajiantou"></i>&nbsp;Webpack</a>
-         
-        
-    </div>
-
-    <div class="post-comment">
-          
-          <div id="disqus_thread"></div>
-  <script type="text/javascript">
-      (function() {
-          
-          
-          if (window.location.hostname == "localhost")
-              return;
-          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-          var disqus_shortname = 'yourdiscussshortname';
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  <a href="https://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
- 
-
-          
-    </div>
-</article>
-          </div>
-		   </main>
-      <footer class="footer">
-    <div class="copyright">
-        &copy;
-        
-         
-            <span class="author" itemprop="copyrightHolder"><a href="https://zhangyadong.me">梓川</a> | </span>
-         
-
-		  <span>Crafted with ❤️ by <a href="https://github.com/Fastbyte01/KeepIt" target="_blank" rel="external nofollow noopener noreffer">KeepIt</a> & <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a></span>
-    </div>
-</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
-    
-  
-
-
-
-
-
-
-
-     </div>
-  </body>
-</html>
+</code></pre></div><h2 id=代码规范>代码规范</h2><ol><li><code>width</code> 在前， <code>height</code> 在后</li><li>CSS <code>bem</code> 命名规范，eg: <code>.carousel-item_current</code> , <code>.indicator-item_current</code></li><li>JavaScript 的 <code>camelCase</code> 命名法</li><li>提炼函数，消除重复代码</li><li>去除魔法数字</li></ol></div><div class=post-copyright><p class=copyright-item><span>Author:</span>
+<span>梓川</span></p><p class=copyright-item><span>Words:</span>
+<span>926</span></p><p class=copyright-item><span>Share:</span>
+<span><a href="//twitter.com/share?url=https%3a%2f%2fzhangyadong.me%2f2020%2fcarousel%2f&text=Carousel&via=Tom61319231" target=_blank title="Share on Twitter"><i class="iconfont icon-twitter"></i></a></span></p><p class=copyright-item>Released under <a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></p></div><div class=post-tags><section><a href=javascript:window.history.back();>Back</a></span> ·
+<span><a href=https://zhangyadong.me>Home</a></span></section></div><div class=post-nav><a href=https://zhangyadong.me/2020/webpack/ class=prev rel=prev title=Webpack><i class="iconfont icon-dajiantou"></i>&nbsp;Webpack</a></div><div class=post-comment><div id=disqus_thread></div><script type=text/javascript>(function(){if(window.location.hostname=="localhost")
+return;var dsq=document.createElement('script');dsq.type='text/javascript';dsq.async=true;var disqus_shortname='yourdiscussshortname';dsq.src='//'+disqus_shortname+'.disqus.com/embed.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(dsq);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com/ class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></div></article></div></main><footer class=footer><div class=copyright>&copy;
+<span class=author itemprop=copyrightHolder><a href=https://zhangyadong.me>梓川</a> |</span>
+<span>Crafted with ❤️ by <a href=https://github.com/Fastbyte01/KeepIt target=_blank rel="external nofollow noopener noreffer">KeepIt</a> & <a href=https://gohugo.io/ target=_blank rel="external nofollow noopener noreffer">Hugo</a></span></div></footer><script src=/js/vendor_no_gallery.min.js async></script></div></body></html>

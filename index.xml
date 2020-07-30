@@ -1,40 +1,10 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Mai on Mai</title>
-    <link>https://zhangyadong.me/</link>
-    <description>Recent content in Mai on Mai</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Wed, 01 Apr 2020 01:03:00 +0800</lastBuildDate>
-    <atom:link href="https://zhangyadong.me/" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Posts</title>
-      <link>https://zhangyadong.me/posts/</link>
-      <pubDate>Fri, 17 Apr 2020 01:21:00 +0800</pubDate>
-      
-      <guid>https://zhangyadong.me/posts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>https://zhangyadong.me/about/</link>
-      <pubDate>Wed, 01 Apr 2020 01:03:00 +0800</pubDate>
-      
-      <guid>https://zhangyadong.me/about/</guid>
-      <description>&lt;p&gt;比较 geek，文档只看官方的，比如 MDN，javascript.info，绝大多数开发问题都可以通过官方文档解决，github issue，stackoverflow 也是经常解决问题的工具&lt;/p&gt;
-&lt;p&gt;P.S. &lt;strong&gt;正在找工作。。。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;TL;DR&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;2017 年开始折腾博客，用 Hexo 搭的，基本什么都没写，后来换 Hugo，托管在 &lt;code&gt;coding.net&lt;/code&gt;
-，啥都没写，这个博客是今年 3 月份搭的，之前用 github.io 访问，经大佬指点，绑定了域名，之前用了两年的阿里云 &lt;code&gt;.top&lt;/code&gt;
-域名过期未续费，所以在 &lt;a href=&#34;https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages&#34;&gt;namecheap&lt;/a&gt; 注册了 &lt;code&gt;.me&lt;/code&gt; 新域名，托管在 github page，而且其与
-&lt;em&gt;&lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s Encrypt&lt;/a&gt;&lt;/em&gt; 有合作，自动 https 绿锁，
-&lt;em&gt;Everything goes smoothly&lt;/em&gt; .&lt;/p&gt;
-&lt;p&gt;用 ox-hugo 写博客有一点不方便就是不支持 org-mode 的 &lt;a href=&#34;https://github.com/kaushalmodi/ox-hugo/issues/162&#34;&gt;codeRef&lt;/a&gt; ，希望作者早点完成这个 feature 吧！&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;看起来生活挺枯燥乏味的。。。&lt;/strong&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-  </channel>
-</rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mai on Mai</title><link>https://zhangyadong.me/</link><description>Recent content in Mai on Mai</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 01 Apr 2020 01:03:00 +0800</lastBuildDate><atom:link href="https://zhangyadong.me/" rel="self" type="application/rss+xml"/><item><title>Posts</title><link>https://zhangyadong.me/posts/</link><pubDate>Fri, 17 Apr 2020 01:21:00 +0800</pubDate><guid>https://zhangyadong.me/posts/</guid><description/></item><item><title>About me</title><link>https://zhangyadong.me/about/</link><pubDate>Wed, 01 Apr 2020 01:03:00 +0800</pubDate><guid>https://zhangyadong.me/about/</guid><description>&lt;p>比较 geek，文档只看官方的，比如 MDN，javascript.info，绝大多数开发问题都可以通过官方文档解决，github issue，stackoverflow 也是经常解决问题的工具&lt;/p>
+&lt;p>P.S. &lt;strong>正在找工作。。。&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>TL;DR&lt;/strong>&lt;/p>
+&lt;p>2017 年开始折腾博客，用 Hexo 搭的，基本什么都没写，后来换 Hugo，托管在 &lt;code>coding.net&lt;/code>
+，啥都没写，这个博客是今年 3 月份搭的，之前用 github.io 访问，经大佬指点，绑定了域名，之前用了两年的阿里云 &lt;code>.top&lt;/code>
+域名过期未续费，所以在 &lt;a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages">namecheap&lt;/a> 注册了 &lt;code>.me&lt;/code> 新域名，托管在 github page，而且其与
+&lt;em>&lt;a href="https://letsencrypt.org/">Let&amp;rsquo;s Encrypt&lt;/a>&lt;/em> 有合作，自动 https 绿锁，
+&lt;em>Everything goes smoothly&lt;/em> .&lt;/p>
+&lt;p>用 ox-hugo 写博客有一点不方便就是不支持 org-mode 的 &lt;a href="https://github.com/kaushalmodi/ox-hugo/issues/162">codeRef&lt;/a> ，希望作者早点完成这个 feature 吧！&lt;/p>
+&lt;p>&lt;strong>看起来生活挺枯燥乏味的。。。&lt;/strong>&lt;/p></description></item></channel></rss>

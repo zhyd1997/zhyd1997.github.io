@@ -1,45 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Mai</title>
-    <link>https://zhangyadong.me/posts/</link>
-    <description>Recent content in Posts on Mai</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 17 Apr 2020 01:21:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://zhangyadong.me/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Carousel</title>
-      <link>https://zhangyadong.me/2020/carousel/</link>
-      <pubDate>Fri, 17 Apr 2020 01:21:00 +0800</pubDate>
-      
-      <guid>https://zhangyadong.me/2020/carousel/</guid>
-      <description>大佬太强了，教我撸了个轮播图 初衷  CSS 基础布局的学习和练习 JavaScript 语法和逻辑的学习和练习 学会封装组件  项目地址 JSRUN , gitee , Github
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Mai</title><link>https://zhangyadong.me/posts/</link><description>Recent content in Posts on Mai</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 17 Apr 2020 01:21:00 +0800</lastBuildDate><atom:link href="https://zhangyadong.me/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Carousel</title><link>https://zhangyadong.me/2020/carousel/</link><pubDate>Fri, 17 Apr 2020 01:21:00 +0800</pubDate><guid>https://zhangyadong.me/2020/carousel/</guid><description>大佬太强了，教我撸了个轮播图 初衷 CSS 基础布局的学习和练习 JavaScript 语法和逻辑的学习和练习 学会封装组件 项目地址 JSRUN , gitee , Github
 整体思路 使用 绝对定位 方法使 4 个 div 元素叠在一起
-这只是 CSS 部分 div 部分 // parent element .carousel-wrapper { position: relative; // 设置宽高 width: 300px; height: 150px; } // children element .carousel-item { position: absolute; display: none; // 和 parent 宽高保持一致 width: 100%; height: 100%; } // 显示当前 div .carousel-wrapper .carousel-item_current { display: block; } indicator 部分  让 indicator 靠近底部，显示在 div 上面  .</description>
-    </item>
-    
-    <item>
-      <title>Webpack</title>
-      <link>https://zhangyadong.me/2020/webpack/</link>
-      <pubDate>Mon, 06 Apr 2020 01:23:00 +0800</pubDate>
-      
-      <guid>https://zhangyadong.me/2020/webpack/</guid>
-      <description>在使用 webpack build 项目时，提示文件大小超过限制，而且项目上线后加载特别特别慢， stackoverflow 了一下，原来 webpack.config.js 加了 devtool: source-map ，虽然有利于 development 时 debug，但是会影响网站性能，所以 build 时不需要 devtool ，尝试之后， bundle.js 大小缩至 1/6， 至于怎么解决，是 webpack.config.js 拆分成 webpack.dev.js 和 webpack.prod.js ，还是用三元运算符 devtool: (mode === &#39;development&#39;) ? &#39;inline-source-map&#39; : false 有待斟酌。</description>
-    </item>
-    
-    <item>
-      <title>TypeScript 初体验</title>
-      <link>https://zhangyadong.me/2020/code_review/</link>
-      <pubDate>Sun, 05 Apr 2020 01:04:00 +0800</pubDate>
-      
-      <guid>https://zhangyadong.me/2020/code_review/</guid>
-      <description>PropTypes 转换 PropTypes 是 React 对 prop 的一种类型检查机制，但从 v15.5 开始，官方已经用 prop-types 库替代了 React.PropTypes ，在 TypeScript 项目中使用 JavaScript 库时需要下载声明文件 *.d.ts ，即下载对应的 @types/prop-types ，用法如下
-   React + TypeScript     PropTypes.bool boolean   PropTypes.func () =&amp;gt; void   PropTypes.number number   PropTypes.object {}   PropTypes.string string   PropTypes.node React.ReactNode   PropTypes.any any    另外，强制类型检查方式也不一样，举个例子，前者用 isTrue: PropTypes.bool.isRequired 和 name: PropTypes.string ，后者用 isTrue: boolean ， name?</description>
-    </item>
-    
-  </channel>
-</rss>
+这只是 CSS 部分 div 部分 // parent element .carousel-wrapper { position: relative; // 设置宽高 width: 300px; height: 150px; } // children element .carousel-item { position: absolute; display: none; // 和 parent 宽高保持一致 width: 100%; height: 100%; } // 显示当前 div .carousel-wrapper .carousel-item_current { display: block; } indicator 部分 让 indicator 靠近底部，显示在 div 上面 .</description></item><item><title>Webpack</title><link>https://zhangyadong.me/2020/webpack/</link><pubDate>Mon, 06 Apr 2020 01:23:00 +0800</pubDate><guid>https://zhangyadong.me/2020/webpack/</guid><description>在使用 webpack build 项目时，提示文件大小超过限制，而且项目上线后加载特别特别慢， stackoverflow 了一下，原来 webpack.config.js 加了 devtool: source-map ，虽然有利于 development 时 debug，但是会影响网站性能，所以 build 时不需要 devtool ，尝试之后， bundle.js 大小缩至 1/6， 至于怎么解决，是 webpack.config.js 拆分成 webpack.dev.js 和 webpack.prod.js ，还是用三元运算符 devtool: (mode === 'development') ? 'inline-source-map' : false 有待斟酌。</description></item><item><title>TypeScript 初体验</title><link>https://zhangyadong.me/2020/code_review/</link><pubDate>Sun, 05 Apr 2020 01:04:00 +0800</pubDate><guid>https://zhangyadong.me/2020/code_review/</guid><description>PropTypes 转换 PropTypes 是 React 对 prop 的一种类型检查机制，但从 v15.5 开始，官方已经用 prop-types 库替代了 React.PropTypes ，在 TypeScript 项目中使用 JavaScript 库时需要下载声明文件 *.d.ts ，即下载对应的 @types/prop-types ，用法如下
+React + TypeScript PropTypes.bool boolean PropTypes.func () =&amp;gt; void PropTypes.number number PropTypes.object {} PropTypes.string string PropTypes.node React.ReactNode PropTypes.any any 另外，强制类型检查方式也不一样，举个例子，前者用 isTrue: PropTypes.bool.isRequired 和 name: PropTypes.string ，后者用 isTrue: boolean ， name?</description></item></channel></rss>
