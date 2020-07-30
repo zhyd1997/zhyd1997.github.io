@@ -3,17 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zhangyadong.me/post/string_split/</loc>
+    <lastmod>2020-07-30T17:08:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhangyadong.me/post/</loc>
+    <lastmod>2020-07-30T17:08:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhangyadong.me/post/architecture/</loc>
+    <lastmod>2020-07-30T16:52:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhangyadong.me/post/tool/</loc>
+    <lastmod>2020-07-30T16:43:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zhangyadong.me/</loc>
     <lastmod>2020-07-30T15:23:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://zhangyadong.me/post/carousel/</loc>
-    <lastmod>2020-04-17T01:21:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zhangyadong.me/post/</loc>
     <lastmod>2020-04-17T01:21:00+08:00</lastmod>
   </url>
   
@@ -28,8 +43,8 @@
   </url>
   
   <url>
-    <loc>https://zhangyadong.me/post/about/</loc>
-    <lastmod>2020-04-01T01:03:00+08:00</lastmod>
+    <loc>https://zhangyadong.me/about/</loc>
+    <lastmod>2020-07-30T15:19:32+08:00</lastmod>
   </url>
   
   <url>

@@ -5,10 +5,37 @@
     <link>https://zhangyadong.me/post/</link>
     <description>Recent content in Posts on Mai</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 17 Apr 2020 01:21:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2020 17:08:00 +0800</lastBuildDate>
     
 	<atom:link href="https://zhangyadong.me/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Leetcode-Like Problem</title>
+      <link>https://zhangyadong.me/post/string_split/</link>
+      <pubDate>Thu, 30 Jul 2020 17:08:00 +0800</pubDate>
+      
+      <guid>https://zhangyadong.me/post/string_split/</guid>
+      <description> string split algorithm inline style text processing  </description>
+    </item>
+    
+    <item>
+      <title>Architecture</title>
+      <link>https://zhangyadong.me/post/architecture/</link>
+      <pubDate>Thu, 30 Jul 2020 16:52:00 +0800</pubDate>
+      
+      <guid>https://zhangyadong.me/post/architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Similar Tools</title>
+      <link>https://zhangyadong.me/post/tool/</link>
+      <pubDate>Thu, 30 Jul 2020 16:43:00 +0800</pubDate>
+      
+      <guid>https://zhangyadong.me/post/tool/</guid>
+      <description>Overleaf rich-text mode AucTeX preview-latex It relys on Emacs.</description>
+    </item>
     
     <item>
       <title>Carousel</title>
@@ -38,20 +65,6 @@
       <guid>https://zhangyadong.me/post/code_review/</guid>
       <description>PropTypes 转换 PropTypes 是 React 对 prop 的一种类型检查机制，但从 v15.5 开始，官方已经用 prop-types 库替代了 React.PropTypes ，在 TypeScript 项目中使用 JavaScript 库时需要下载声明文件 *.d.ts ，即下载对应的 @types/prop-types ，用法如下
    React + TypeScript     PropTypes.bool boolean   PropTypes.func () =&amp;gt; void   PropTypes.number number   PropTypes.object {}   PropTypes.string string   PropTypes.node React.ReactNode   PropTypes.any any    另外，强制类型检查方式也不一样，举个例子，前者用 isTrue: PropTypes.bool.isRequired 和 name: PropTypes.string ，后者用 isTrue: boolean ， name?</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>https://zhangyadong.me/post/about/</link>
-      <pubDate>Wed, 01 Apr 2020 01:03:00 +0800</pubDate>
-      
-      <guid>https://zhangyadong.me/post/about/</guid>
-      <description>比较 geek，文档只看官方的，比如 MDN，javascript.info，绝大多数开发问题都可以通过官方文档解决，github issue，stackoverflow 也是经常解决问题的工具
-P.S. 正在找工作。。。
-TL;DR
-2017 年开始折腾博客，用 Hexo 搭的，基本什么都没写，后来换 Hugo，托管在 coding.net ，啥都没写，这个博客是今年 3 月份搭的，之前用 github.io 访问，经大佬指点，绑定了域名，之前用了两年的阿里云 .top 域名过期未续费，所以在 namecheap 注册了 .me 新域名，托管在 github page，而且其与 Let&amp;rsquo;s Encrypt 有合作，自动 https 绿锁， Everything goes smoothly .
-用 ox-hugo 写博客有一点不方便就是不支持 org-mode 的 codeRef ，希望作者早点完成这个 feature 吧！
-看起来生活挺枯燥乏味的。。。</description>
     </item>
     
   </channel>
