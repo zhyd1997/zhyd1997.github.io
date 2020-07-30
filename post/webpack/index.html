@@ -19,7 +19,7 @@
 
     <meta name="generator" content="Hugo 0.70.0" />
 
-    <title>404 Page not found &mdash; Mai</title>
+    <title>Webpack &mdash; Mai</title>
 
     <link rel="stylesheet" href="/css/basic.css" type="text/css" />
     <link rel="stylesheet" href="/css/onyx.css" type="text/css" />
@@ -38,13 +38,19 @@
 
     
     
-<meta property="og:title" content="404 Page not found" />
+<meta property="og:title" content="Webpack" />
 <meta property="og:description"
-      content="A Paper Typesetting Editor" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://zhangyadong.me/404.html" />
+      content="在使用 webpack build 项目时，提示文件大小超过限制，而且项目上线后加载特别特别慢， stackoverflow 了一下，原来 webpack.config.js 加了 devtool: source-map ，虽然有利于 development 时 debug，但是会影响网站性能，所以 build 时不需要 devtool ，尝试之后， bundle.js 大小缩至 1/6， 至于怎么解决，是 webpack.config.js 拆分成 webpack.dev.js 和 webpack.prod.js ，还是用三元运算符 devtool: (mode === &#39;development&#39;) ? &#39;inline-source-map&#39; : false 有待斟酌。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhangyadong.me/post/webpack/" />
 
 
+    
+        <meta property="article:published_time" content="2020-04-06T01:23:00&#43;08:00"/>
+    
+    
+        <meta property="article:modified_time" content="2020-04-06T01:23:00&#43;08:00"/>
     
 
 
@@ -56,12 +62,15 @@
 
 
 
+    
+
 
 
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
-<meta name="twitter:description" content="A Paper Typesetting Editor"/>
+<meta name="twitter:title" content="Webpack"/>
+<meta name="twitter:description" content="在使用 webpack build 项目时，提示文件大小超过限制，而且项目上线后加载特别特别慢， stackoverflow 了一下，原来 webpack.config.js 加了 devtool: source-map ，虽然有利于 development 时 debug，但是会影响网站性能，所以 build 时不需要 devtool ，尝试之后， bundle.js 大小缩至 1/6， 至于怎么解决，是 webpack.config.js 拆分成 webpack.dev.js 和 webpack.prod.js ，还是用三元运算符 devtool: (mode === &#39;development&#39;) ? &#39;inline-source-map&#39; : false 有待斟酌。
+"/>
 
 </head>
 
@@ -71,6 +80,11 @@
 		<div class="bodywrapper">
 		    <div class="body">
                         
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents"></nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
                             
                             <script src="https://zhangyadong.me/js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 
@@ -114,9 +128,38 @@
                         
 
 			
-	<h1>Page not found</h1>
 
-	I'm sorry, but the requested page wasn’t found on the server.
+<h1>Webpack</h1>
+
+<div>
+    
+
+
+    
+    
+        <span class="post-date">Mon Apr 6, 2020</span>
+    
+
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
+    <p>在使用 webpack <code>build</code> 项目时，提示文件大小超过限制，而且项目上线后加载特别特别慢，
+stackoverflow 了一下，原来 <code>webpack.config.js</code> 加了 <code>devtool: source-map</code> ，虽然有利于 <code>development</code> 时 debug，但是会影响网站性能，所以 <code>build</code> 时不需要
+<code>devtool</code> ，尝试之后，
+<code>bundle.js</code> 大小缩至 1/6， 至于怎么解决，是 <code>webpack.config.js</code> 拆分成 <code>webpack.dev.js</code> 和
+<code>webpack.prod.js</code> ，还是用三元运算符
+<code>devtool: (mode === 'development') ? 'inline-source-map' : false</code>
+有待斟酌。</p>
+
+
+</div>
+
 
 
 			
@@ -179,7 +222,7 @@
             </li>
         
             <li class="toctree-l1">
-                <a class="reference" href="/post/webpack/">Webpack</a>
+                <a class="reference active" href="/post/webpack/">Webpack</a>
             </li>
         
             <li class="toctree-l1">

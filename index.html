@@ -1,8 +1,241 @@
-<!doctype html><html lang=en><head><meta name=generator content="Hugo 0.70.0"><meta charset=utf-8><meta http-equiv=x-ua-compatible content="chrome=1"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><link rel=canonical href=https://zhangyadong.me/><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"><title>Mai</title><meta name=title content="Mai"><link rel=stylesheet href=/font/iconfont.css><link rel=stylesheet href=/css/main.min.css><link rel=alternate href=/index.xml type=application/rss+xml title=Mai><link rel=feed href=/index.xml type=application/rss+xml title=Mai><meta name=twitter:card content="summary"><meta name=twitter:title content="Mai"><meta name=twitter:description content><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","url":"https:\/\/zhangyadong.me","author":{"@type":"Person","name":"梓川"},"image":"https:\/\/zhangyadong.me\/cover.png","thumbnailUrl":"https:\/\/zhangyadong.me\/logo.png","name":"Mai"}</script></head><body><div class=wrapper><nav class=navbar><div class=container><div class="navbar-header header-logo"><a href=https://zhangyadong.me>Mai</a></div><div class="menu navbar-right"><a class=menu-item href=/posts/>Blog</a>
-<a class=menu-item href=/categories/>Categories</a>
-<a class=menu-item href=/about>About</a>
-<a href=javascript:void(0); class=theme-switch><i class="iconfont icon-sun"></i></a>&nbsp;</div></div></nav><nav class=navbar-mobile id=nav-mobile style=display:none><div class=container><div class=navbar-header><div><a href=javascript:void(0); class=theme-switch><i class="iconfont icon-sun"></i></a>&nbsp;<a href=https://zhangyadong.me>Mai</a></div><div class=menu-toggle><span></span><span></span><span></span></div></div><div class=menu id=mobile-menu><a class=menu-item href=/posts/>Blog</a>
-<a class=menu-item href=/categories/>Categories</a>
-<a class=menu-item href=/about>About</a></div></div></nav><main class=main><div class=container><div class=intro><div class=avatar><a href=/posts/><img src=/images/me/avatar.jpg></a></div><h2 class=description>人活着就是为了樱岛麻衣</h2><div class=social-links><a href=https://github.com/007tom target=_blank rel="me noopener noreffer" target=_blank><i class="iconfont icon-github"></i></a><a href=https://twitter.com/Tom61319231 target=_blank rel="me noopener noreffer" target=_blank><i class="iconfont icon-twitter"></i></a><a href=https://www.zhihu.com/people/tom-86-5 rel="me noopener noreffer" target=_blank><i class="iconfont icon-zhihu"></i></a></div></div></div></main><footer class=footer><div class=copyright>&copy;
-<span class=author itemprop=copyrightHolder><a href=https://zhangyadong.me>梓川</a> |</span>
-<span>Crafted with ❤️ by <a href=https://github.com/Fastbyte01/KeepIt target=_blank rel="external nofollow noopener noreffer">KeepIt</a> & <a href=https://gohugo.io/ target=_blank rel="external nofollow noopener noreffer">Hugo</a></span></div></footer><script src=/js/vendor_main.min.js async></script></div></body></html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    
+    
+    
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+
+    
+    <meta name="referrer" content="no-referrer">
+
+    
+        <meta name="description" content="A Paper Typesetting Editor">
+    
+
+    <meta name="generator" content="Hugo 0.70.0" />
+
+    <title> Mai</title>
+
+    <link rel="stylesheet" href="/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="/css/onyx.css" type="text/css" />
+
+    
+        <link rel="stylesheet" href="/css/github_chroma.css">
+    
+
+    
+
+    
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    
+
+    
+
+    
+    
+<meta property="og:title" content="Homepage" />
+<meta property="og:description"
+      content="A Paper Typesetting Editor" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://zhangyadong.me/" />
+
+
+    
+        <meta property="og:updated_time" content="2020-07-30T15:23:00&#43;08:00"/>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Homepage"/>
+<meta name="twitter:description" content="A Paper Typesetting Editor"/>
+
+</head>
+
+    <body>
+	<div class="document">
+	    <div class="documentwrapper">
+		<div class="bodywrapper">
+		    <div class="body">
+                        
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents"></nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
+                            
+                            <script src="https://zhangyadong.me/js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+
+<script>
+ (function() {
+     var $toc = $('#TableOfContents');
+     if ($toc.length > 0) {
+         var $window = $(window);
+
+         function onScroll(){
+             var currentScroll = $window.scrollTop();
+             var h = $('.body h1, .body h2, .body h3, .body h4, .body h5, .body h6');
+             var id = "";
+             h.each(function (i, e) {
+                 e = $(e);
+                 if (e.offset().top - 10 <= currentScroll) {
+                     id = e.attr('id');
+                 }
+             });
+             var current = $toc.find('a.current');
+             if (current.length == 1 && current.eq(0).attr('href') == '#' + id) return true;
+
+             current.each(function (i, e) {
+                 $(e).removeClass('current').siblings('ul').hide();
+             });
+             $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                 $(e).children('a').addClass('current').siblings('ul').show();
+             });
+         }
+
+         $window.on('scroll', onScroll);
+         $(document).ready(function() {
+             $toc.find('a').parent('li').find('ul').hide();
+             onScroll();
+             document.getElementsByClassName('toc')[0].style.display = '';
+         });
+     }
+ })();
+</script>
+
+                        
+
+			
+
+
+    <h1>Homepage</h1>
+    <p>Will be updated later&hellip;</p>
+
+
+
+
+
+
+			
+		    </div>
+		</div>
+	    </div>
+
+	    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+    <div class="sphinxsidebarwrapper">
+        <p class="logo">
+            <a href="https://zhangyadong.me/">
+                <img class="logo" src="/favicon-256x256.png" alt="Logo"/>
+                
+                <br />
+                <span class="logo logo-name">Eorg</span>
+            </a>
+        </p>
+
+        <p class="blurb">A Paper Typesetting Editor</p>
+        
+
+        
+    
+
+    
+        <iframe src="https://ghbtns.com/github-btn.html?user=zhyd1997&repo=Eorg&type=watch&count=true&size=large"
+                style="border: 0; overflow: hidden;" width="200" height="35"
+                sandbox="allow-scripts allow-popups"></iframe>
+        
+    
+
+    
+
+    
+
+
+        
+
+        
+
+    <h3>Main</h3>
+    <ul>
+        
+            <li class="toctree-l1">
+                <a class="reference active" href="/">Homepage</a>
+            </li>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/post/about/">About Me</a>
+            </li>
+        
+    </ul>
+
+    <h3>Other</h3>
+    <ul>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/post/carousel/">Carousel</a>
+            </li>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/post/webpack/">Webpack</a>
+            </li>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/post/code_review/">TypeScript 初体验</a>
+            </li>
+        
+    </ul>
+
+
+        
+
+    </div>
+</div>
+<div class="clearer"></div>
+
+	    <div class="footer">
+    
+        
+            Exported
+            
+            using
+            
+                <a href="https://www.gnu.org/software/emacs/">Emacs 26.3 </a> &plus;
+                <a href="https://orgmode.org/">Org mode 9.3.7 </a> &plus;
+            
+            <a href="https://github.com/kaushalmodi/ox-hugo"><code>ox-hugo</code></a>
+            and published using
+        
+        <a href="https://gohugo.io/">Hugo 0.70.0</a>
+	&plus; <a href="https://github.com/kaushalmodi/hugo-onyx-theme">Onyx</a>
+    
+</div>
+
+
+    <a href="https://github.com/zhyd1997/Eorg" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/forkme_right_darkblue_ribbon.png" alt="Fork me on GitHub" class="github"/>
+    </a>
+
+
+
+	    
+
+            
+
+	    
+	</div>
+    </body>
+</html>

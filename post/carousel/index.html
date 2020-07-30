@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+    
+    
+    
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+
+    
+    <meta name="referrer" content="no-referrer">
+
+    
+        <meta name="description" content="A Paper Typesetting Editor">
+    
+
+    <meta name="generator" content="Hugo 0.70.0" />
+
+    <title>Carousel &mdash; Mai</title>
+
+    <link rel="stylesheet" href="/css/basic.css" type="text/css" />
+    <link rel="stylesheet" href="/css/onyx.css" type="text/css" />
+
+    
+        <link rel="stylesheet" href="/css/github_chroma.css">
+    
+
+    
+
+    
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    
+
+    
+
+    
+    
+<meta property="og:title" content="Carousel" />
+<meta property="og:description"
+      content="大佬太强了，教我撸了个轮播图 初衷 CSS 基础布局的学习和练习 JavaScript 语法和逻辑的学习和练习 学会封装组件 项目地址 JSRUN , gitee , Github 整体思路 使用 绝对定位 方法使 4 个 div 元素叠在一起 这只是 CSS 部分 div 部分 // parent element .carousel-wrapper { position: relative; // 设置宽高 width: 300px; height: 150px; } // children element .carousel-item { position: absolute; display: none; // 和 parent 宽高保持一致 width: 100%; height: 100%; } // 显示当前 div .carousel-wrapper .carousel-item_current { display: block; } indicator 部分 让 indicator 靠近底部，显示在 div 上面 .
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhangyadong.me/post/carousel/" />
+
+
+    
+        <meta property="article:published_time" content="2020-04-17T01:21:00&#43;08:00"/>
+    
+    
+        <meta property="article:modified_time" content="2020-04-17T01:21:00&#43;08:00"/>
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Carousel"/>
+<meta name="twitter:description" content="大佬太强了，教我撸了个轮播图 初衷 CSS 基础布局的学习和练习 JavaScript 语法和逻辑的学习和练习 学会封装组件 项目地址 JSRUN , gitee , Github 整体思路 使用 绝对定位 方法使 4 个 div 元素叠在一起 这只是 CSS 部分 div 部分 // parent element .carousel-wrapper { position: relative; // 设置宽高 width: 300px; height: 150px; } // children element .carousel-item { position: absolute; display: none; // 和 parent 宽高保持一致 width: 100%; height: 100%; } // 显示当前 div .carousel-wrapper .carousel-item_current { display: block; } indicator 部分 让 indicator 靠近底部，显示在 div 上面 .
+"/>
+
+</head>
+
+    <body>
+	<div class="document">
+	    <div class="documentwrapper">
+		<div class="bodywrapper">
+		    <div class="body">
+                        
+                            
+                                <div class="toc">
+                                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#大佬-太强了-教我撸了个轮播图"><a href="https://segmentfault.com/u/stillsilly">大佬</a>太强了，教我撸了个轮播图</a>
+      <ul>
+        <li><a href="#初衷">初衷</a></li>
+        <li><a href="#项目地址">项目地址</a></li>
+      </ul>
+    </li>
+    <li><a href="#整体思路">整体思路</a></li>
+    <li><a href="#这只是-css-部分">这只是 CSS 部分</a>
+      <ul>
+        <li><a href="#div-部分"><code>div</code> 部分</a></li>
+        <li><a href="#indicator-部分">indicator 部分</a></li>
+        <li><a href="#arrow-部分">arrow 部分</a></li>
+      </ul>
+    </li>
+    <li><a href="#右箭头的-onclick-事件绑定">右箭头的 <code>onclick</code> 事件绑定</a>
+      <ul>
+        <li><a href="#选择元素">选择元素</a></li>
+        <li><a href="#从-console-dot-log-开始">从 <code>console.log()</code> 开始</a></li>
+        <li><a href="#效果实现">效果实现</a></li>
+        <li><a href="#优化">优化</a></li>
+      </ul>
+    </li>
+    <li><a href="#指示器的事件委托">指示器的事件委托</a>
+      <ul>
+        <li><a href="#console-dot-log-对应-indicator-item-数字"><code>console.log()</code> 对应 <code>indicator-item</code> 数字</a></li>
+        <li><a href="#功能实现">功能实现</a></li>
+      </ul>
+    </li>
+    <li><a href="#整体优化">整体优化</a>
+      <ul>
+        <li><a href="#箭头和指示器同步">箭头和指示器同步</a></li>
+        <li><a href="#魔法数字问题">魔法数字问题</a></li>
+        <li><a href="#消除重复代码-高优先级">消除重复代码（ <em>高优先级</em> ）</a></li>
+        <li><a href="#添加图片">添加图片</a></li>
+        <li><a href="#优化-indicator-item-效果">优化 <code>indicator-item</code> 效果</a></li>
+      </ul>
+    </li>
+    <li><a href="#代码规范">代码规范</a></li>
+  </ul>
+</nav>
+                                    <a href="#" class="back-to-top">Back to top</a>
+                                </div>
+                            
+                            <script src="https://zhangyadong.me/js/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+
+<script>
+ (function() {
+     var $toc = $('#TableOfContents');
+     if ($toc.length > 0) {
+         var $window = $(window);
+
+         function onScroll(){
+             var currentScroll = $window.scrollTop();
+             var h = $('.body h1, .body h2, .body h3, .body h4, .body h5, .body h6');
+             var id = "";
+             h.each(function (i, e) {
+                 e = $(e);
+                 if (e.offset().top - 10 <= currentScroll) {
+                     id = e.attr('id');
+                 }
+             });
+             var current = $toc.find('a.current');
+             if (current.length == 1 && current.eq(0).attr('href') == '#' + id) return true;
+
+             current.each(function (i, e) {
+                 $(e).removeClass('current').siblings('ul').hide();
+             });
+             $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+                 $(e).children('a').addClass('current').siblings('ul').show();
+             });
+         }
+
+         $window.on('scroll', onScroll);
+         $(document).ready(function() {
+             $toc.find('a').parent('li').find('ul').hide();
+             onScroll();
+             document.getElementsByClassName('toc')[0].style.display = '';
+         });
+     }
+ })();
+</script>
+
+                        
+
+			
+
+<h1>Carousel</h1>
+
+<div>
+    
+
+
+    
+    
+        <span class="post-date">Fri Apr 17, 2020</span>
+    
+
+
+    <div class="clear-float"></div>
+    
+    <div class="clear-float"></div>
+</div>
+
+<div class="post">
+    
+
+    <h2 id="大佬-太强了-教我撸了个轮播图"><a href="https://segmentfault.com/u/stillsilly">大佬</a>太强了，教我撸了个轮播图&nbsp;<a class="headline-hash" href="#大佬-太强了-教我撸了个轮播图">#</a> </h2>
+<h3 id="初衷">初衷&nbsp;<a class="headline-hash" href="#初衷">#</a> </h3>
+<ol>
+<li>CSS 基础布局的学习和练习</li>
+<li>JavaScript 语法和逻辑的学习和练习</li>
+<li>学会封装组件</li>
+</ol>
+<h3 id="项目地址">项目地址&nbsp;<a class="headline-hash" href="#项目地址">#</a> </h3>
+<p><a href="http://jsrun.net/iHfKp/edit">JSRUN</a> , <a href="https://gitee.com/write%5Fa%5Fcarousel/carousel">gitee</a> , <a href="https://github.com/zhyd1997/Carousel">Github</a></p>
+<h2 id="整体思路">整体思路&nbsp;<a class="headline-hash" href="#整体思路">#</a> </h2>
+<p>使用 <strong>绝对定位</strong> 方法使 4 个 <code>div</code> 元素叠在一起</p>
+<h2 id="这只是-css-部分">这只是 CSS 部分&nbsp;<a class="headline-hash" href="#这只是-css-部分">#</a> </h2>
+<h3 id="div-部分"><code>div</code> 部分&nbsp;<a class="headline-hash" href="#div-部分">#</a> </h3>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="o">//</span> <span class="nt">parent</span> <span class="nt">element</span>
+<span class="p">.</span><span class="nc">carousel-wrapper</span> <span class="p">{</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">relative</span><span class="p">;</span>
+    <span class="err">//</span> <span class="err">设置宽高</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">//</span> <span class="nt">children</span> <span class="nt">element</span>
+<span class="p">.</span><span class="nc">carousel-item</span> <span class="p">{</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+    <span class="err">//</span> <span class="err">和</span> <span class="err">parent</span> <span class="err">宽高保持一致</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">//</span> <span class="nt">显示当前</span> <span class="nt">div</span>
+<span class="p">.</span><span class="nc">carousel-wrapper</span> <span class="p">.</span><span class="nc">carousel-item_current</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="indicator-部分">indicator 部分&nbsp;<a class="headline-hash" href="#indicator-部分">#</a> </h3>
+<ul>
+<li>让 indicator 靠近底部，显示在 <code>div</code> 上面</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-list</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">bottom</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="hl">    <span class="k">z-index</span><span class="p">:</span> <span class="mi">999</span><span class="p">;</span>
+</span><span class="p">}</span>
+
+<span class="p">.</span><span class="nc">indicator-item</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mf">2.5</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="o">-</span><span class="kc">block</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">indicator-item_current</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+<ul>
+<li>水平居中，去掉换行符导致的间距</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-list</span> <span class="p">{</span>
+    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>增加间距</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-item</span> <span class="p">{</span>
+    <span class="k">margin-left</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">margin-right</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="arrow-部分">arrow 部分&nbsp;<a class="headline-hash" href="#arrow-部分">#</a> </h3>
+<p>使用行内元素 <code>span</code></p>
+<ul>
+<li>设置水平位置</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">arrow</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">black</span><span class="p">;</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">inline</span><span class="o">-</span><span class="kc">block</span><span class="p">;</span>
+    <span class="k">font-size</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">25</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">arrow-left</span> <span class="p">{</span>
+    <span class="k">left</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">arrow-right</span> <span class="p">{</span>
+    <span class="k">right</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>垂直居中</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">arrow</span> <span class="p">{</span>
+    <span class="k">margin</span><span class="p">:</span> <span class="kc">auto</span><span class="p">;</span>
+    <span class="k">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>形状改为圆形，设置不透明度</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">arrow</span> <span class="p">{</span>
+    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">50</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>改变 <code>:hover</code> 不透明度</li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">arrow</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>添加 <code>cursor</code></li>
+</ul>
+<!--listend-->
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-item</span> <span class="p">{</span>
+    <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">arrow</span> <span class="p">{</span>
+    <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="右箭头的-onclick-事件绑定">右箭头的 <code>onclick</code> 事件绑定&nbsp;<a class="headline-hash" href="#右箭头的-onclick-事件绑定">#</a> </h2>
+<h3 id="选择元素">选择元素&nbsp;<a class="headline-hash" href="#选择元素">#</a> </h3>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">elArrowRight</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">&#39;arrow-right&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">elListCarouselItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">&#39;carousel-item&#39;</span><span class="p">);</span>
+</code></pre></div><p>事件绑定是发生在 <code>element</code> 身上的，
+<code>document.getElementsByClassName()</code> 返回值是 (array-like object)
+类数组对象 <code>HTMLCollection</code> ，类名为 <code>arrow-right</code> 的元素是当前要绑定的元素，对象后面跟 <code>[0]</code> 即可。</p>
+<h3 id="从-console-dot-log-开始">从 <code>console.log()</code> 开始&nbsp;<a class="headline-hash" href="#从-console-dot-log-开始">#</a> </h3>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 注意变量作用域
+</span><span class="c1"></span>
+<span class="nx">elArrowRight</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">handleClick</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">oldIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">currentIndex</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 点击最后一个 div 要切回第一个 div
+</span><span class="c1"></span>      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;现在是第 &#39;</span> <span class="o">+</span> <span class="nx">oldIndex</span> <span class="o">+</span> <span class="s1">&#39; 图显示，应该改成第 &#39;</span> <span class="o">+</span> <span class="nx">currentIndex</span> <span class="o">+</span> <span class="s1">&#39; 图显示&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="效果实现">效果实现&nbsp;<a class="headline-hash" href="#效果实现">#</a> </h3>
+<p><code>div</code> 的隐藏和显示已经用 <code>css</code> 实现了，逻辑实现 <code>console.log()</code> 描述的也很清楚，接下来接下来要做的就是具体效果，改变 <code>elListCarouselItem</code> 的 <code>carousel-item_current</code> 位置，即点击右箭头之后，该 <code>class</code> 在当前 <code>&lt;div&gt;</code> 中删除，添加至下一个 <code>&lt;div&gt;</code> 中，实现方法用
+<code>classList</code> 即可：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+<span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+</code></pre></div><p><strong>左箭头的实现方法同理，不再赘述。</strong></p>
+<h3 id="优化">优化&nbsp;<a class="headline-hash" href="#优化">#</a> </h3>
+<h4 id="getelementsbyclassname-vs-queryselector"><code>getElementsByClassName()</code> <strong>vs</strong> <code>querySelector()</code>&nbsp;<a class="headline-hash" href="#getelementsbyclassname-vs-queryselector">#</a> </h4>
+<p>遇事不决，stackoverflow</p>
+<p>论坛给出的<a href="https://stackoverflow.com/questions/14377590/queryselector-and-queryselectorall-vs-getelementsbyclassname-and-getelementbyid">回答</a>是：querySelector 适用范围更广，比如选择 <code>&lt;li&gt;</code> 元素.</p>
+<p>So，优化后的代码如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">elArrowRight</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.arrow-right&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">elListCarouselItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;.carousel-item&#39;</span><span class="p">);</span>
+</code></pre></div><h4 id="handleclick"><code>handleClick()</code>&nbsp;<a class="headline-hash" href="#handleclick">#</a> </h4>
+<p>这里加上函数名多此一举，直接用匿名函数</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elArrowRight</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{...};</span>
+</code></pre></div><h2 id="指示器的事件委托">指示器的事件委托&nbsp;<a class="headline-hash" href="#指示器的事件委托">#</a> </h2>
+<p>现在要实现的功能是，点击指示器，切换至对应 <code>div</code> ，可以使用循环给 <code>indicator-item</code> 绑定事件，我太懒，直接用了事件委托的方法，参考<a href="https://javascript.info/event-delegation">这篇文档</a>。</p>
+<p>用事件委托的方法，绑定的元素就该是 <code>indicator-list</code> ，这就是其优于第一种方法的地方。</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">elIndicatorList</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.indicator-list&#39;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">elIndicatorItem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;.indicator-item&#39;</span><span class="p">);</span>
+</code></pre></div><p>同样，先做逻辑，再实现功能</p>
+<h3 id="console-dot-log-对应-indicator-item-数字"><code>console.log()</code> 对应 <code>indicator-item</code> 数字&nbsp;<a class="headline-hash" href="#console-dot-log-对应-indicator-item-数字">#</a> </h3>
+<p>要获取对应数字，须在 <code>.html</code> 自定义 <code>data-*</code> 属性， 即：</p>
+<div class="highlight"><pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">span</span> <span class="na">data-index</span><span class="o">=</span><span class="s">&#34;0&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;indicator-item indicator-item_current&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">data-index</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;indicator-item&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">data-index</span><span class="o">=</span><span class="s">&#34;2&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;indicator-item&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">span</span> <span class="na">data-index</span><span class="o">=</span><span class="s">&#34;3&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;indicator-item&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</code></pre></div><p>然后在 <code>.js</code> 文件中通过 <code>dataset</code> 获取属性。这里，我们需要的数字 <code>index</code> ，而不是字符串，需要将字符串转化为数字，有 <code>parseInt()</code> 和 <code>Number()</code> 可供选择，<a href="https://stackoverflow.com/questions/4090518/what-is-the-difference-between-parseint-and-number">查了一下</a> ,选了 <code>parseInt()</code> ：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elIndicatorList</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>这样，就可以获得所点击 <code>indicator-item</code> 对应的数字了。现在有一个 <code>corner case</code> ，
+<code>indicator-list</code> 是一个和父元素等宽的元素，如果点击 <code>indicator-item</code> 之外的部分会有 bug，处理方式是事件委托仅对包含 <code>indicator-item</code> 类的元素起作用，点击其他位置即返回：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elIndicatorList</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+
+<span class="hl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">target</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;indicator-item&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hl">      <span class="k">return</span><span class="p">;</span>
+</span><span class="hl">    <span class="p">}</span>
+</span>
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="功能实现">功能实现&nbsp;<a class="headline-hash" href="#功能实现">#</a> </h3>
+<p>实现方式和左右箭头的一样，关键是怎么知道上个状态的 <code>index</code> ，当前 <code>index</code> 即
+<code>targetIndex</code> ，这里先用 <code>currentIndex</code> ，函数执行之后，将 <code>targetIndex</code> 赋给 <code>currentIndex</code>
+作为上个状态时的 <code>oldIndex</code> ，看能不能跑起来：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elIndicatorList</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">target</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;indicator-item&#39;</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="hl">    <span class="kd">var</span> <span class="nx">oldIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span><span class="p">;</span> <span class="c1">// 前面已经定义 currentIndex 初始为 0
+</span></span><span class="hl"><span class="c1"></span>
+</span><span class="hl">    <span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+</span><span class="hl">    <span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">targetIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+</span><span class="hl">    <span class="nx">elIndicatorItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+</span><span class="hl">    <span class="nx">elIndicatorItem</span><span class="p">[</span><span class="nx">targetIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+</span><span class="hl">
+</span><span class="hl">    <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">targetIndex</span><span class="p">;</span>
+</span><span class="p">};</span>
+</code></pre></div>
+<h2 id="整体优化">整体优化&nbsp;<a class="headline-hash" href="#整体优化">#</a> </h2>
+<h3 id="箭头和指示器同步">箭头和指示器同步&nbsp;<a class="headline-hash" href="#箭头和指示器同步">#</a> </h3>
+<p>点击箭头或者指示器的时候，
+<code>indicator-item</code> 并不会发生变化，只需加如下两行代码即可：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elIndicatorItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+<span class="nx">elIndicatorItme</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+</code></pre></div><h3 id="魔法数字问题">魔法数字问题&nbsp;<a class="headline-hash" href="#魔法数字问题">#</a> </h3>
+<p>在箭头 <code>onclick</code> 事件绑定中，使用了数字 3 来表示最后一个 <code>div</code> 的索引，这个数字叫做魔法数字，可用 <code>LIST_LENGTH - 1</code> 表示：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">LIST_LENGTH</span> <span class="o">=</span> <span class="nx">elCarouselItem</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+</code></pre></div><h3 id="消除重复代码-高优先级">消除重复代码（ <em>高优先级</em> ）&nbsp;<a class="headline-hash" href="#消除重复代码-高优先级">#</a> </h3>
+<p>当前三个点击事件的代码如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elArrowRight</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">oldIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">currentIndex</span> <span class="o">&gt;=</span> <span class="nx">LIST_LENGTH</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// currentIndex &gt;= 4 即为 0
+</span><span class="c1"></span>      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+    <span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+    <span class="nx">elIndicatorItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+    <span class="nx">elIndicatorItem</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">elArrowLeft</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">oldIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">currentIndex</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">LIST_LENGTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+    <span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+    <span class="nx">elIndicatorItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+    <span class="nx">elIndicatorItem</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">elIndicatorList</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">target</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;indicator-item&#39;</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">oldIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span><span class="p">;</span>
+
+    <span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+    <span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">targetIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+    <span class="nx">elIndicatorItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+    <span class="nx">elIndicatorItem</span><span class="p">[</span><span class="nx">targetIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+
+    <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">targetIndex</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div><p>观察发现，有大量很多可复用代码，现在要把这些代码抽取出来</p>
+<h4 id="changecurrentclassname--oldindex-currentindex"><code>changeCurrentClassName(oldIndex, currentIndex)</code>&nbsp;<a class="headline-hash" href="#changecurrentclassname--oldindex-currentindex">#</a> </h4>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">changeCurrentClassName</span><span class="p">(</span><span class="nx">oldIndex</span><span class="p">,</span> <span class="nx">currentIndex</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+    <span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+    <span class="nx">elIndicatorItem</span><span class="p">[</span><span class="nx">oldIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+    <span class="nx">elIndicatorItem</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>现在整体代码变成这样了：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elArrowRight</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">oldIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">currentIndex</span> <span class="o">&gt;=</span> <span class="nx">LIST_LENGTH</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="hl">    <span class="nx">changeCurrentClassName</span><span class="p">(</span><span class="nx">oldIndex</span><span class="p">,</span> <span class="nx">currentIndex</span><span class="p">);</span>
+</span><span class="p">};</span>
+<span class="nx">elArrowLeft</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">oldIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">currentIndex</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">LIST_LENGTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="hl">    <span class="nx">changeCurrentClassName</span><span class="p">(</span><span class="nx">oldIndex</span><span class="p">,</span> <span class="nx">currentIndex</span><span class="p">);</span>
+</span><span class="p">};</span>
+<span class="nx">elIndicatorList</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">target</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;indicator-item&#39;</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">oldIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span><span class="p">;</span>
+
+<span class="hl">    <span class="nx">changeCurrentClassName</span><span class="p">(</span><span class="nx">oldIndex</span><span class="p">,</span> <span class="nx">targetIndex</span><span class="p">);</span>
+</span>
+    <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">targetIndex</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div>
+<p>这里的 index 也是可以抽取的，下一步就是处理 index</p>
+<h4 id="changecurrentindex--targetindex"><code>changeCurrentIndex(targetIndex)</code>&nbsp;<a class="headline-hash" href="#changecurrentindex--targetindex">#</a> </h4>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">changeCurrentIndex</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">targetIndex</span> <span class="o">&gt;=</span> <span class="nx">LIST_LENGTH</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">targetIndex</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">LIST_LENGTH</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">currentIndex</span> <span class="o">=</span> <span class="nx">targetIndex</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p>前面获取上个状态的索引是通过 <code>oldIndex</code> ，其实用 <code>querySelector()</code>
+更简单：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elArrowRight</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="nx">changeCurrentIndex</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+    <span class="nx">changeCurrentClassName</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="nx">elArrowLeft</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="nx">changeCurrentIndex</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+    <span class="nx">changeCurrentClassName</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="nx">elIndicatorList</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+
+    <span class="nx">changeCurrentIndex</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+    <span class="nx">changeCurrentClassName</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">changeCurrentClassName</span><span class="p">()</span> <span class="p">{</span>
+<span class="hl">    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.carousel-item_current&#39;</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+</span>    <span class="nx">elListCarouselItem</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;carousel-item_current&#39;</span><span class="p">);</span>
+<span class="hl">    <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.indicator-item_current&#39;</span><span class="p">).</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+</span>    <span class="nx">elIndicatorItem</span><span class="p">[</span><span class="nx">currentIndex</span><span class="p">].</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;indicator-item_current&#39;</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="handleindexchange--targetindex"><code>handleIndexChange(targetIndex)</code>&nbsp;<a class="headline-hash" href="#handleindexchange--targetindex">#</a> </h4>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">handleIndexChange</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">changeCurrentIndex</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+    <span class="nx">changeCurrentClassName</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div><p>处理一下 <code>corner case</code> ：如果当前索引和目标索引相等，即返回</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">handleIndexChange</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">)</span> <span class="p">{</span>
+<span class="hl">    <span class="k">if</span> <span class="p">(</span><span class="nx">targetIndex</span> <span class="o">===</span> <span class="nx">currentIndex</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 注意类型比较
+</span></span><span class="hl"><span class="c1"></span>      <span class="k">return</span><span class="p">;</span>
+</span><span class="hl">    <span class="p">}</span>
+</span>
+    <span class="nx">changeCurrentIndex</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+    <span class="nx">changeCurrentClassName</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>最终代码如下：</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">elArrowRight</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">handleIndexChange</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">elArrowLeft</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nx">currentIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">handleIndexChange</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="nx">elIndicatorList</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="nx">functin</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">target</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">target</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">target</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="s1">&#39;indicator-item&#39;</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">var</span> <span class="nx">targetIndex</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">target</span><span class="p">.</span><span class="nx">dataset</span><span class="p">.</span><span class="nx">index</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+    <span class="nx">handleIndexChange</span><span class="p">(</span><span class="nx">targetIndex</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div><h3 id="添加图片">添加图片&nbsp;<a class="headline-hash" href="#添加图片">#</a> </h3>
+<p>前面的操作都是基于不同背景色的 <code>&lt;div&gt;</code> ，现在可以将其替换为真实的图片，使用了图床外链，设置一下样式：</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">carousel-item-img</span> <span class="p">{</span>
+    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+    <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="优化-indicator-item-效果">优化 <code>indicator-item</code> 效果&nbsp;<a class="headline-hash" href="#优化-indicator-item-效果">#</a> </h3>
+<p><code>::after::</code> 是 <code>css3</code> 为区分伪类和伪元素的写法，不兼容 IE8</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-item</span><span class="p">::</span><span class="nd">after</span> <span class="p">{</span>
+    <span class="k">content</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="k">position</span><span class="p">:</span> <span class="kc">absolute</span><span class="p">;</span>
+    <span class="k">top</span><span class="p">:</span> <span class="mi">-3</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">bottom</span><span class="p">:</span> <span class="mi">-3</span><span class="kt">px</span><span class="p">;</span>
+    <span class="k">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">right</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>给 <code>indicator-item</code> 添加 <code>transform</code> 效果，优化视觉体验：</p>
+<div class="highlight"><pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">indicator-item</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">scale</span><span class="p">(</span><span class="mf">1.3</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="p">.</span><span class="nc">indicator-item_current</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+    <span class="k">transform</span><span class="p">:</span> <span class="nb">scale</span><span class="p">(</span><span class="mf">1.3</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="代码规范">代码规范&nbsp;<a class="headline-hash" href="#代码规范">#</a> </h2>
+<ol>
+<li><code>width</code> 在前， <code>height</code> 在后</li>
+<li>CSS <code>bem</code> 命名规范，eg: <code>.carousel-item_current</code> , <code>.indicator-item_current</code></li>
+<li>JavaScript 的 <code>camelCase</code> 命名法</li>
+<li>提炼函数，消除重复代码</li>
+<li>去除魔法数字</li>
+</ol>
+
+
+</div>
+
+
+
+			
+			
+		    </div>
+		</div>
+	    </div>
+
+	    <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+    <div class="sphinxsidebarwrapper">
+        <p class="logo">
+            <a href="https://zhangyadong.me/">
+                <img class="logo" src="/favicon-256x256.png" alt="Logo"/>
+                
+                <br />
+                <span class="logo logo-name">Eorg</span>
+            </a>
+        </p>
+
+        <p class="blurb">A Paper Typesetting Editor</p>
+        
+
+        
+    
+
+    
+        <iframe src="https://ghbtns.com/github-btn.html?user=zhyd1997&repo=Eorg&type=watch&count=true&size=large"
+                style="border: 0; overflow: hidden;" width="200" height="35"
+                sandbox="allow-scripts allow-popups"></iframe>
+        
+    
+
+    
+
+    
+
+
+        
+
+        
+
+    <h3>Main</h3>
+    <ul>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/">Homepage</a>
+            </li>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/post/about/">About Me</a>
+            </li>
+        
+    </ul>
+
+    <h3>Other</h3>
+    <ul>
+        
+            <li class="toctree-l1">
+                <a class="reference active" href="/post/carousel/">Carousel</a>
+            </li>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/post/webpack/">Webpack</a>
+            </li>
+        
+            <li class="toctree-l1">
+                <a class="reference" href="/post/code_review/">TypeScript 初体验</a>
+            </li>
+        
+    </ul>
+
+
+        
+
+    </div>
+</div>
+<div class="clearer"></div>
+
+	    <div class="footer">
+    
+        
+            Exported
+            
+            using
+            
+            <a href="https://github.com/kaushalmodi/ox-hugo"><code>ox-hugo</code></a>
+            and published using
+        
+        <a href="https://gohugo.io/">Hugo 0.70.0</a>
+	&plus; <a href="https://github.com/kaushalmodi/hugo-onyx-theme">Onyx</a>
+    
+</div>
+
+
+    <a href="https://github.com/zhyd1997/Eorg" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/forkme_right_darkblue_ribbon.png" alt="Fork me on GitHub" class="github"/>
+    </a>
+
+
+
+	    
+
+            
+
+	    
+	</div>
+    </body>
+</html>

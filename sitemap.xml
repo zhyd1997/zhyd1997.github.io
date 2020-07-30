@@ -1,1 +1,43 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://zhangyadong.me/2020/carousel/</loc><lastmod>2020-04-17T01:21:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url><url><loc>https://zhangyadong.me/categories/</loc><lastmod>2020-04-17T01:21:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url><url><loc>https://zhangyadong.me/categories/css/</loc><lastmod>2020-04-17T01:21:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url><url><loc>https://zhangyadong.me/posts/</loc><lastmod>2020-04-17T01:21:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url><url><loc>https://zhangyadong.me/2020/webpack/</loc><lastmod>2020-04-06T01:23:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url><url><loc>https://zhangyadong.me/categories/typescript/</loc><lastmod>2020-04-05T01:04:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url><url><loc>https://zhangyadong.me/2020/code_review/</loc><lastmod>2020-04-05T01:04:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url><url><loc>https://zhangyadong.me/about/</loc><lastmod>2020-04-01T01:03:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url><url><loc>https://zhangyadong.me/</loc><lastmod>2020-04-01T01:03:00+08:00</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url><url><loc>https://zhangyadong.me/tags/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://zhangyadong.me/</loc>
+    <lastmod>2020-07-30T15:23:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhangyadong.me/post/carousel/</loc>
+    <lastmod>2020-04-17T01:21:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhangyadong.me/post/</loc>
+    <lastmod>2020-04-17T01:21:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhangyadong.me/post/webpack/</loc>
+    <lastmod>2020-04-06T01:23:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhangyadong.me/post/code_review/</loc>
+    <lastmod>2020-04-05T01:04:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhangyadong.me/post/about/</loc>
+    <lastmod>2020-04-01T01:03:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhangyadong.me/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://zhangyadong.me/tags/</loc>
+  </url>
+  
+</urlset>
