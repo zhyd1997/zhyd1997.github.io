@@ -17,7 +17,7 @@
       
       <guid>https://zhangyadong.me/post/workflow/</guid>
       <description>My folder structure:
-. ├── Eorg └── blog ├── deploy.sh └── docs └── post.org blog  edit post.org ./deploy.sh &amp;quot;deploy message&amp;quot; git add . git reset public git reset themes  Eorg  update Eorg project  </description>
+. ├── Eorg └── blog ├── deploy.sh └── docs └── post.org blog  edit post.org ./deploy.sh &amp;quot;deploy message&amp;quot; git add . git reset public git reset themes git commit -m &amp;quot;some messages&amp;quot; git push origin master  Eorg  update Eorg project  </description>
     </item>
     
     <item>
