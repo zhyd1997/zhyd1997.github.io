@@ -5,10 +5,20 @@
     <link>https://zhangyadong.me/post/</link>
     <description>Recent content in Posts on Mai</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 30 Jul 2020 17:08:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2020 19:37:00 +0800</lastBuildDate>
     
 	<atom:link href="https://zhangyadong.me/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>WorkFlow</title>
+      <link>https://zhangyadong.me/post/workflow/</link>
+      <pubDate>Thu, 30 Jul 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://zhangyadong.me/post/workflow/</guid>
+      <description>My folder structure:
+. ├── Eorg └── blog ├── deploy.sh └── docs └── post.org  edit post.org ./deploy.sh &amp;quot;deploy message&amp;quot; update Eorg project  </description>
+    </item>
     
     <item>
       <title>Leetcode-Like Problem</title>
@@ -58,7 +68,7 @@
     </item>
     
     <item>
-      <title>TypeScript 初体验</title>
+      <title>TypeScript</title>
       <link>https://zhangyadong.me/post/code_review/</link>
       <pubDate>Sun, 05 Apr 2020 01:04:00 +0800</pubDate>
       

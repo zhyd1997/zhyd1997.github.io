@@ -11,6 +11,16 @@
     
     
     <item>
+      <title>WorkFlow</title>
+      <link>https://zhangyadong.me/post/workflow/</link>
+      <pubDate>Thu, 30 Jul 2020 19:37:00 +0800</pubDate>
+      
+      <guid>https://zhangyadong.me/post/workflow/</guid>
+      <description>My folder structure:
+. ├── Eorg └── blog ├── deploy.sh └── docs └── post.org  edit post.org ./deploy.sh &amp;quot;deploy message&amp;quot; update Eorg project  </description>
+    </item>
+    
+    <item>
       <title>Leetcode-Like Problem</title>
       <link>https://zhangyadong.me/post/string_split/</link>
       <pubDate>Thu, 30 Jul 2020 17:08:00 +0800</pubDate>
@@ -58,7 +68,7 @@
     </item>
     
     <item>
-      <title>TypeScript 初体验</title>
+      <title>TypeScript</title>
       <link>https://zhangyadong.me/post/code_review/</link>
       <pubDate>Sun, 05 Apr 2020 01:04:00 +0800</pubDate>
       
