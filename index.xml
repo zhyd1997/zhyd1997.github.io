@@ -11,6 +11,16 @@
     
     
     <item>
+      <title>WorkFlow</title>
+      <link>https://zhangyadong.me/post/workflow/</link>
+      <pubDate>Fri, 04 Sep 2020 12:18:00 +0800</pubDate>
+      
+      <guid>https://zhangyadong.me/post/workflow/</guid>
+      <description>My folder structure:
+. ├── Eorg └── blog ├── deploy.sh └── docs └── post.org blog  emacs post.org C-c, C-e, H ./deploy.sh &amp;quot;deploy message&amp;quot; git add . git reset public themes git commit -m &amp;quot;some messages&amp;quot; git push origin master  Eorg  update Eorg project  </description>
+    </item>
+    
+    <item>
       <title>Table</title>
       <link>https://zhangyadong.me/post/table/</link>
       <pubDate>Fri, 31 Jul 2020 15:53:00 +0800</pubDate>
@@ -19,16 +29,6 @@
       <description>Resource:
  Tasks ondblclick  Demo:
 See the Pen Bagua Chart by Mai (@Sakuta) on CodePen. </description>
-    </item>
-    
-    <item>
-      <title>WorkFlow</title>
-      <link>https://zhangyadong.me/post/workflow/</link>
-      <pubDate>Thu, 30 Jul 2020 19:37:00 +0800</pubDate>
-      
-      <guid>https://zhangyadong.me/post/workflow/</guid>
-      <description>My folder structure:
-. ├── Eorg └── blog ├── deploy.sh └── docs └── post.org blog  edit post.org ./deploy.sh &amp;quot;deploy message&amp;quot; git add . git reset public git reset themes git commit -m &amp;quot;some messages&amp;quot; git push origin master  Eorg  update Eorg project  </description>
     </item>
     
     <item>
