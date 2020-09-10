@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://zhangyadong.me/</loc>
+    <lastmod>2020-09-10T17:32:22+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://zhangyadong.me/post/</loc>
     <lastmod>2020-09-04T12:29:32+08:00</lastmod>
   </url>
@@ -29,11 +34,6 @@
   
   <url>
     <loc>https://zhangyadong.me/post/tool/</loc>
-    <lastmod>2020-07-30T18:48:39+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zhangyadong.me/</loc>
     <lastmod>2020-07-30T18:48:39+08:00</lastmod>
   </url>
   
